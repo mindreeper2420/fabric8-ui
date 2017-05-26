@@ -11,7 +11,7 @@ import { IModalHost } from '../../space-wizard/models/modal-host';
 @Component({
   selector: 'alm-spaces',
   templateUrl: 'spaces.component.html',
-  styleUrls: ['./spaces.component.scss'],
+  styleUrls: ['./spaces.component.less'],
   providers: [SpaceService]
 })
 export class SpacesComponent implements OnInit {

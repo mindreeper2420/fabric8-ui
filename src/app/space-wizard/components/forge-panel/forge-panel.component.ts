@@ -15,7 +15,7 @@ import {
 @Component({
   selector: 'forge-panel',
   templateUrl: './forge-panel.component.html',
-  styleUrls: [ './forge-panel.component.scss' ]
+  styleUrls: [ './forge-panel.component.less' ]
 })
 export class ForgePanelComponent implements OnInit, OnDestroy {
 
@@ -49,4 +49,3 @@ export class ForgePanelComponent implements OnInit, OnDestroy {
   private log: ILoggerDelegate = () => {};
 
 }
-

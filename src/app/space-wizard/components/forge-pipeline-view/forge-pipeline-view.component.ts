@@ -7,7 +7,7 @@ import { ForgeAppGenerator } from './forge-app-generator';
 @Component({
   selector: 'forge-pipeline-view',
   templateUrl: './forge-pipeline-view.component.html',
-  styleUrls: [ './forge-pipeline-view.component.scss' ]
+  styleUrls: [ './forge-pipeline-view.component.less' ]
 })
 export class ForgePipelineViewComponent implements OnInit, OnDestroy {
 
@@ -42,4 +42,3 @@ export class ForgePipelineViewComponent implements OnInit, OnDestroy {
   private log: ILoggerDelegate = () => {};
 
 }
-

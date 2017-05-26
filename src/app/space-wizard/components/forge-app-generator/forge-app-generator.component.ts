@@ -22,7 +22,7 @@ import { FieldWidgetClassificationOptions } from '../../models/contracts/field-c
 
   selector: 'forge-app-generator',
   templateUrl: './forge-app-generator.component.html',
-  styleUrls: [ './forge-app-generator.component.scss' ],
+  styleUrls: [ './forge-app-generator.component.less' ],
   providers: [
     ForgeAppGeneratorServiceClient.factoryProvider
   ]
@@ -236,4 +236,3 @@ export class ForgeAppGeneratorComponent implements OnInit, OnDestroy, OnChanges 
   private log: ILoggerDelegate = () => {};
 
 }
-

@@ -13,7 +13,7 @@ export class Activity {
   encapsulation: ViewEncapsulation.None,
   selector: 'alm-activity',
   templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.scss']
+  styleUrls: ['./activity.component.less']
 })
 export class ActivityComponent implements OnDestroy, OnInit  {
   activityItems: any[] = [];

@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'forge-step-view',
   templateUrl: './forge-step-view.component.html',
-  styleUrls: [ './forge-step-view.component.scss' ]
+  styleUrls: [ './forge-step-view.component.less' ]
 })
 export class ForgeStepViewComponent implements OnInit, OnDestroy {
 
@@ -66,4 +66,3 @@ export class ForgeStepViewComponent implements OnInit, OnDestroy {
   private log: ILoggerDelegate = () => {};
 
 }
-

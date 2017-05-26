@@ -23,7 +23,7 @@ import { LoginService } from './shared/login.service';
     'class': 'app app-component flex-container in-column-direction flex-grow-1'
   },
   selector: 'f8-app',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.less'],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
