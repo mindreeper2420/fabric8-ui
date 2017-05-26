@@ -30,26 +30,26 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 
 
-const sassModules = [
+const lessModules = [
   {
     name: 'bootstrap'
   }, {
     name: 'font-awesome',
     module: 'font-awesome',
     path: 'font-awesome',
-    sass: 'scss'
+    less: 'less'
   }, {
     name: 'patternfly',
-    module: 'patternfly-sass-with-css'
+    module: 'patternfly'
   }
 ];
 
-sassModules.forEach(function (val) {
-  val.module = val.module || val.name + '-sass';
+lessModules.forEach(function (val) {
+  val.module = val.module || val.name + '-less';
   val.path = val.path || path.join(val.module, 'assets');
   val.modulePath = val.modulePath || path.join('node_modules', val.path);
-  val.sass = val.sass || path.join('stylesheets');
-  val.sassPath = path.join(helpers.root(), val.modulePath, val.sass);
+  val.less = val.less || path.join('stylesheets');
+  val.lessPath = path.join(helpers.root(), val.modulePath, val.less);
 });
 
 
@@ -219,7 +219,7 @@ module.exports = function (options) {
           ],
         },
         {
-          test: /^(?!.*component).*\.scss$/,
+          test: /^(?!.*component).*\.less$/,
           use: extractCSS.extract({
             fallback: 'style-loader',
             use: [
@@ -231,10 +231,10 @@ module.exports = function (options) {
                   context: '/'
                 }
               }, {
-                loader: 'sass-loader',
+                loader: 'less-loader',
                 options: {
-                  includePaths: sassModules.map(function (val) {
-                    return val.sassPath;
+                  includePaths: lessModules.map(function (val) {
+                    return val.lessPath;
                   }),
                   sourceMap: true
                 }
@@ -242,7 +242,7 @@ module.exports = function (options) {
             ],
           })
         }, {
-          test: /\.component\.scss$/,
+          test: /\.component\.less$/,
           use: [
             {
               loader: 'to-string-loader'
@@ -254,10 +254,10 @@ module.exports = function (options) {
                 context: '/'
               }
             }, {
-              loader: 'sass-loader',
+              loader: 'less-loader',
               options: {
-                includePaths: sassModules.map(function (val) {
-                  return val.sassPath;
+                includePaths: lessModules.map(function (val) {
+                  return val.lessPath;
                 }),
                 sourceMap: true
               }

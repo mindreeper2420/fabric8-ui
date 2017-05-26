@@ -2,22 +2,22 @@
 // Utility styles
 ///////////////////////////
 
-@mixin padding-x($count:15) {
-  @for $i from 0 through $count {
-    .padding-#{$i} {
-      padding: #{$i}px !important;
+@mixin padding-x(@count:15) {
+  @for @i from 0 through @count {
+    .padding-#{@i} {
+      padding: #{@i}px !important;
     }
-    .padding-top-#{$i} {
-      padding-top: #{$i}px !important;
+    .padding-top-#{@i} {
+      padding-top: #{@i}px !important;
     }
-    .padding-left-#{$i} {
-      padding-left: #{$i}px !important;
+    .padding-left-#{@i} {
+      padding-left: #{@i}px !important;
     }
-    .padding-bottom-#{$i} {
-      padding-bottom: #{$i}px !important;
+    .padding-bottom-#{@i} {
+      padding-bottom: #{@i}px !important;
     }
-    .padding-right-#{$i} {
-      padding-right: #{$i}px !important;
+    .padding-right-#{@i} {
+      padding-right: #{@i}px !important;
     }
   }
 }
@@ -25,59 +25,59 @@
 @mixin create-padding-x-standard-offset() {
 
     .padding-standard-offset {
-      padding: $grid-gutter-width/2 !important;
+      padding: @grid-gutter-width/2 !important;
     }
 
     .padding-top-standard-offset {
-      padding-top: $grid-gutter-width/2 !important;
+      padding-top: @grid-gutter-width/2 !important;
     }
     .padding-left-standard-offset {
-      padding-left: $grid-gutter-width/2 !important;
+      padding-left: @grid-gutter-width/2 !important;
     }
     .padding-right-standard-offset {
-      padding-right: $grid-gutter-width/2 !important;
+      padding-right: @grid-gutter-width/2 !important;
     }
     .padding-bottom-standard-offset {
-      padding-bottom: $grid-gutter-width/2 !important;
+      padding-bottom: @grid-gutter-width/2 !important;
     }
 }
 
 @mixin create-margin-x-standard-offset() {
     .margin-standard-spacing {
-      margin: $grid-gutter-width/2 !important;
+      margin: @grid-gutter-width/2 !important;
     }
 
     .margin-top-standard-offset {
-      margin-top: $grid-gutter-width/2 !important;
+      margin-top: @grid-gutter-width/2 !important;
     }
     .margin-left-standard-offset {
-      margin-left: $grid-gutter-width/2 !important;
+      margin-left: @grid-gutter-width/2 !important;
     }
     .margin-right-standard-offset {
-      margin-right: $grid-gutter-width/2 !important;
+      margin-right: @grid-gutter-width/2 !important;
     }
     .margin-bottom-standard-offset {
-      margin-bottom: $grid-gutter-width/2 !important;
+      margin-bottom: @grid-gutter-width/2 !important;
     }
 }
 
 
-@mixin margin-x($count:15) {
-  @for $i from 0 through $count {
-    .margin-#{$i} {
-      margin: #{$i}px !important;
+@mixin margin-x(@count:15) {
+  @for @i from 0 through @count {
+    .margin-#{@i} {
+      margin: #{@i}px !important;
     }
-    .margin-top-#{$i} {
-      margin-top: #{$i}px !important;
+    .margin-top-#{@i} {
+      margin-top: #{@i}px !important;
     }
-    .margin-left-#{$i} {
-      margin-left: #{$i}px !important;
+    .margin-left-#{@i} {
+      margin-left: #{@i}px !important;
     }
-    .margin-bottom-#{$i} {
+    .margin-bottom-#{@i} {
       margin-bottom: #{$i}px !important;
     }
-    .margin-right-#{$i} {
-      margin-right: #{$i}px !important;
+    .margin-right-#{@i} {
+      margin-right: #{@i}px !important;
     }
   }
 }
@@ -196,7 +196,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  font-size: $font-size-base;
+  font-size: @font-size-base;
 }
 .app {
   @extend .flex-grow-1;
@@ -208,10 +208,10 @@ body {
   &.app {
     >footer{
       .footer {
-        text-align: $textCenter;
-        font-size: $font-size-small;
+        text-align: center;
+        font-size: @font-size-small;
         border-top: 1px solid;
-        border-color: color-pf-blue-300;
+        border-color: @color-pf-blue-300;
       }
     }
   }
@@ -227,21 +227,21 @@ body {
 // This plays out in scenarios where view requires animation like slide ins/slie outs
 // These are not good for flex
 .view-container {
-  $content-padding:0;
+  @content-padding:0;
   position:relative;
   >.view {
     @extend .fill-container;
     &.with-rows {
-      padding-left: $grid-gutter-width/2;
-      padding-right: $grid-gutter-width/2;
+      padding-left: @grid-gutter-width/2;
+      padding-right: @grid-gutter-width/2;
     }
     >main,section,aside {
-      padding:$content-padding;
+      padding:@content-padding;
       overflow: auto;
     }
     >.view-content {
       position: relative;
-      padding-top: $content-padding;
+      padding-top: @content-padding;
     }
   }
 }
@@ -300,14 +300,14 @@ body {
 // flex utility styles
 //////////////////////
 
-@mixin flex-grow-x($count:12) {
-  @for $i from 1 through $count {
-  .flex-grow-#{$i} { flex-grow: $i; }
+@mixin flex-grow-x(@count:12) {
+  @for @i from 1 through @count {
+  .flex-grow-#{@i} { flex-grow: $i; }
   }
 }
 @mixin flex-shrink-x($count:12) {
-  @for $i from 1 through $count {
-  .flex-shrink-#{$i} { flex-shrink: $i; }
+  @for @i from 1 through $count {
+  .flex-shrink-#{@i} { flex-shrink: $i; }
   }
 }
 // create 12 flex grow/shrink partitions

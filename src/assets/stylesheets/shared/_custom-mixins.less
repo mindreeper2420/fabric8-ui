@@ -1,15 +1,15 @@
-@import 'bootstrap/mixins';
-@import 'patternfly/mixins';
-@import 'patternfly/mixin_overrides';
+@import(reference) 'bootstrap/mixins';
+@import(reference) 'patternfly/mixins';
+@import(reference) 'patternfly/mixin_overrides';
 
 // functions
 //convert px to em/rem
-@function em($px) {
-  @return ($px / $em-base-font-size) * 1em;
+@function em(@px) {
+  @return (@px / @em-base-font-size) * 1em;
 }
 
-@function rem($px) {
-  @return ($px / $rem-base-font-size) * 1rem;
+@function rem(@px) {
+  @return (@px / @rem-base-font-size) * 1rem;
 }
 
 //custom mixins
@@ -19,7 +19,7 @@
   text-overflow: ellipsis;
 }
 
-@mixin transform($transform) {
+@mixin transform(@transform) {
   -webkit-transform: $transform;
      -moz-transform: $transform;
       -ms-transform: $transform;
@@ -27,7 +27,7 @@
           transform: $transform;
 }
 
-@mixin transition($transition) {
+@mixin transition(@transition) {
   -webkit-transition: $transition;
      -moz-transition: $transition;
       -ms-transition: $transition;
@@ -35,36 +35,36 @@
           transition: $transition;
 }
 
-@mixin borderRadius($radius) {
+@mixin borderRadius(@radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
        -o-border-radius: $radius;
           border-radius: $radius;
 }
 
-@mixin Border($borderwidth, $borderStyle, $borderColor) {
-  -webkit-border-width: $borderwidth;
-  -webkit-border-color: $borderColor;
-  -webkit-border-style: $borderStyle;
-     -moz-border-width: $borderwidth;
-     -moz-border-color: $borderColor;
-     -moz-border-style: $borderStyle;
-       -o-border-width: $borderwidth;
-       -o-border-color: $borderColor;
-       -o-border-style: $borderStyle;
-          border-width: $borderwidth;
-          border-color: $borderColor;
-          border-style: $borderStyle;
+@mixin Border(@borderwidth, @borderStyle, @borderColor) {
+  -webkit-border-width: @borderwidth;
+  -webkit-border-color: @borderColor;
+  -webkit-border-style: @borderStyle;
+     -moz-border-width: @borderwidth;
+     -moz-border-color: @borderColor;
+     -moz-border-style: @borderStyle;
+       -o-border-width: @borderwidth;
+       -o-border-color: @borderColor;
+       -o-border-style: @borderStyle;
+          border-width: @borderwidth;
+          border-color: @borderColor;
+          border-style: @borderStyle;
 }
 
 //multiline truncate
-@mixin multiline-truncate($line-height, $line-count, $bg-color) {
+@mixin multiline-truncate(@line-height, @line-count, @bg-color) {
   position: relative;
   overflow: hidden;
   margin-right: -1em;
   padding-right: 1em;
-  line-height: $line-height;
-  max-height: $line-height * $line-count;
+  line-height: @line-height;
+  max-height: @line-height * @line-count;
   text-align: justify;
   &:before {
     position: absolute;
@@ -78,7 +78,7 @@
     width: 1em;
     height: 3em;
     margin-top: 1em;
-    background: $bg-color;
+    background: @bg-color;
     content: '';
   }
 }

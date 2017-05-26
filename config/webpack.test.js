@@ -27,26 +27,26 @@ const FABRIC8_RECOMMENDER_API_URL = process.env.FABRIC8_RECOMMENDER_API_URL || '
 const FABRIC8_PIPELINES_NAMESPACE = process.env.FABRIC8_PIPELINES_NAMESPACE || '-development';
 const FABRIC8_BRANDING = 'fabric8';
 
-const sassModules = [
+const lessModules = [
   {
     name: 'bootstrap'
   }, {
     name: 'font-awesome',
     module: 'font-awesome',
     path: 'font-awesome',
-    sass: 'scss'
+    less: 'less'
   }, {
     name: 'patternfly',
-    module: 'patternfly-sass-with-css'
+    module: 'patternfly'
   }
 ];
 
-sassModules.forEach(function (val) {
-  val.module = val.module || val.name + '-sass';
+lessModules.forEach(function (val) {
+  val.module = val.module || val.name + '-less';
   val.path = val.path || path.join(val.module, 'assets');
   val.modulePath = val.modulePath || path.join('node_modules', val.path);
-  val.sass = val.sass || path.join('stylesheets');
-  val.sassPath = path.join(helpers.root(), val.modulePath, val.sass);
+  val.less = val.less || path.join('stylesheets');
+  val.lessPath = path.join(helpers.root(), val.modulePath, val.less);
 });
 
 /**
@@ -168,7 +168,8 @@ module.exports = function (options) {
         },
 
         {
-          test: /\.scss$/,
+          test: /\.less$/,
+          fallback: 'style-loader',
           use: [
             {
               loader: 'to-string-loader'
@@ -177,10 +178,10 @@ module.exports = function (options) {
               loader: 'css-loader'
             },
             {
-              loader: 'sass-loader',
+              loader: 'less-loader',
               query: {
-                includePaths: sassModules.map(function (val) {
-                  return val.sassPath;
+                includePaths: lessModules.map(function (val) {
+                  return val.lessPath;
                 })
               }
             }
