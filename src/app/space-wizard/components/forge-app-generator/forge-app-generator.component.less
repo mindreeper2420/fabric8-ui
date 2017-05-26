@@ -1,4 +1,4 @@
-$icon-path:'../../../../assets/icon/';
+@icon-path:'../../../../assets/icon/';
 @import '../../../../assets/stylesheets/base';
 @import '../../../../assets/stylesheets/_icons';
 @import '../../../../assets/stylesheets/shared/_layout';
@@ -108,21 +108,21 @@ $icon-path:'../../../../assets/icon/';
 // styling of the app generator message section
 .app-generator-message {
 
-  $color-success:$color-pf-green;
-  $color-success-border:$color-success;
-  $color-success-background:#EAF4EA;
+  @color-success:@color-pf-green;
+  @color-success-border:@color-success;
+  @color-success-background:#EAF4EA;
 
-  $color-error:$color-pf-red;
-  $color-error-border:$color-error;
-  $color-error-background:$color-pf-black-100;
+  @color-error:@color-pf-red;
+  @color-error-border:@color-error;
+  @color-error-background:@color-pf-black-100;
 
-  $color-warning:$color-pf-gold;
-  $color-warning-border:$color-warning;
-  $color-warning-background:$color-pf-black-100;
+  @color-warning:@color-pf-gold;
+  @color-warning-border:$@color-warning;
+  @color-warning-background:@color-pf-black-100;
 
-  $standard-spacing:$grid-gutter-width/2;
+  @standard-spacing:@grid-gutter-width/2;
 
-  padding:$standard-spacing !important;
+  padding:@standard-spacing !important;
 
   position:relative;
   width:100%;
@@ -135,12 +135,12 @@ $icon-path:'../../../../assets/icon/';
    display:none !important;
   }
   .message-title-container {
-    padding: $standard-spacing;
-    margin-bottom: $standard-spacing;
+    padding: @standard-spacing;
+    margin-bottom: @standard-spacing;
     .message-title {
       user-select: none;
       .message-title-icon {
-        margin-right: $standard-spacing;
+        margin-right: @standard-spacing;
         vertical-align: middle;
       }
       .message-title-icon-label {
@@ -153,7 +153,7 @@ $icon-path:'../../../../assets/icon/';
         font-weight: normal;
         display: inline-block;
         vertical-align: middle;
-        color: $color-pf-black;
+        color: @color-pf-black;
       }
     }
   }
