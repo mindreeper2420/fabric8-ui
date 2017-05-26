@@ -1,6 +1,6 @@
 // layout bebuggind just adds a colored border to the specified elements
 // in order to help with diagnosing layout issues
-@import(reference) 'layout-variables';
+@import(reference) '_layout-variables.less';
 
 
 // add a layout border
@@ -9,7 +9,7 @@
 }
 
 @mixin debug-stretch-to-fit-viewport(@debuging-offset:3*@debug-component-spacing){
-  min-height: calc(100vh - #{@debuging-offset});
+  min-height: calc(100vh - @debuging-offset);
 }
 
 // header main footer trio layout debugging
@@ -29,7 +29,7 @@
 };
 
 .app{
-  @include debug-border(@debug-root-component-border-color,$debug-component-border);
+  @include debug-border(@debug-root-component-border-color,@debug-component-border);
   //min-height: calc(100vh - 2*$debug-component-spacing) !important
   //margin:($debug-component-border+2*$debug-component-spacing);
 }
@@ -38,11 +38,11 @@
 .app-component
 {
 
-  @include debug-border(@debug-component-border-color,$debug-component-border);
+  @include debug-border(@debug-component-border-color,@debug-component-border);
 
   >.app-component
   {
-     @include debug-border(@debug-child-component-border-color,$debug-component-border);
+     @include debug-border(@debug-child-component-border-color,@debug-component-border);
   }
   @include header-main-footer-child;
   >div

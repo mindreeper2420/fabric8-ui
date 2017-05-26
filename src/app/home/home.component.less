@@ -1,6 +1,6 @@
-@import '../../assets/stylesheets/base';
-$icon-path: '../../assets/icon/';
-$images-path: '../../assets/images/';
+@import (reference) '../../assets/stylesheets/_base';
+@icon-path: '../../assets/icon/';
+@images-path: '../../assets/images/';
 .cards-pf { background-color: @color-pf-black-250; }
 .home-wrapper {
   background-color: @color-pf-black-250;
@@ -26,7 +26,7 @@ $images-path: '../../assets/images/';
   margin-left: -40px;
   margin-right: -40px;
   background-color: @color-pf-black-900;
-  background-image: url("#{$images-path}Header_background.png");
+  background-image: url("#{@images-path}Header_background.png");
   background-repeat: no-repeat;
   color: @color-pf-white;
 }

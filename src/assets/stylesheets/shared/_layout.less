@@ -4,20 +4,20 @@
 
 @mixin padding-x(@count:15) {
   @for @i from 0 through @count {
-    .padding-#{@i} {
-      padding: #{@i}px !important;
+    .padding-(@i) {
+      padding: (@i)px !important;
     }
-    .padding-top-#{@i} {
-      padding-top: #{@i}px !important;
+    .padding-top-(@i) {
+      padding-top: (@i)px !important;
     }
-    .padding-left-#{@i} {
-      padding-left: #{@i}px !important;
+    .padding-left-(@i) {
+      padding-left: (@i)px !important;
     }
-    .padding-bottom-#{@i} {
-      padding-bottom: #{@i}px !important;
+    .padding-bottom-(@i) {
+      padding-bottom: (@i)px !important;
     }
-    .padding-right-#{@i} {
-      padding-right: #{@i}px !important;
+    .padding-right-(@i) {
+      padding-right: (@i)px !important;
     }
   }
 }
@@ -64,20 +64,20 @@
 
 @mixin margin-x(@count:15) {
   @for @i from 0 through @count {
-    .margin-#{@i} {
-      margin: #{@i}px !important;
+    .margin-(@i) {
+      margin: (@i)px !important;
     }
-    .margin-top-#{@i} {
-      margin-top: #{@i}px !important;
+    .margin-top-(@i) {
+      margin-top: (@i)px !important;
     }
-    .margin-left-#{@i} {
-      margin-left: #{@i}px !important;
+    .margin-left-(@i) {
+      margin-left: (@i)px !important;
     }
-    .margin-bottom-#{@i} {
-      margin-bottom: #{$i}px !important;
+    .margin-bottom-(@i) {
+      margin-bottom: (@i)px !important;
     }
-    .margin-right-#{@i} {
-      margin-right: #{@i}px !important;
+    .margin-right-(@i) {
+      margin-right: (@i)px !important;
     }
   }
 }
@@ -178,7 +178,7 @@
   margin: 0;
   border-width: 0;
 }
-@import 'layout-debug';
+@import (reference) '_layout-debug';
 ///////////////////////
 // Styles relating to general html document
 ///////////////////////
@@ -230,7 +230,7 @@ body {
   @content-padding:0;
   position:relative;
   >.view {
-    @extend .fill-container;
+    &:extend(.fill-container);
     &.with-rows {
       padding-left: @grid-gutter-width/2;
       padding-right: @grid-gutter-width/2;
@@ -302,12 +302,12 @@ body {
 
 @mixin flex-grow-x(@count:12) {
   @for @i from 1 through @count {
-  .flex-grow-#{@i} { flex-grow: $i; }
+  .flex-grow-(@i) { flex-grow: @i; }
   }
 }
-@mixin flex-shrink-x($count:12) {
-  @for @i from 1 through $count {
-  .flex-shrink-#{@i} { flex-shrink: $i; }
+@mixin flex-shrink-x(@count:12) {
+  @for @i from 1 through @count {
+  .flex-shrink-(@i) { flex-shrink: @i; }
   }
 }
 // create 12 flex grow/shrink partitions
@@ -344,7 +344,7 @@ body {
 
     // Make sure the main,section,aside parts fill the screen and collapse header and footer if not there
     >main,section,aside {
-      @extend .flex-grow-1;
+      &:extend(.flex-grow-1);
     }
     >.container-fluid {
       position:relative;

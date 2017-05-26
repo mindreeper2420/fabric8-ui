@@ -245,7 +245,7 @@ module.exports = function (options) {
           test: /\.component\.less$/,
           use: [
             {
-              loader: 'to-string-loader'
+              loader: 'style-loader'
             }, {
               loader: 'css-loader',
               options: {
@@ -301,6 +301,8 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+
+      extractCSS,
       /*
        * Plugin: ForkCheckerPlugin
        * Description: Do type checking in a separate process, so webpack don't need to wait.

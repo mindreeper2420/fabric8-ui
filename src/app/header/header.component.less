@@ -1,4 +1,4 @@
-@import '../../assets/stylesheets/base';
+@import (reference) '../../assets/stylesheets/_base';
 .view-width-100 { width: 100vw !important; }
 .navbar-pf .navbar-primary {
   li.context {
@@ -48,7 +48,7 @@
       }
     }
     .recent-item-text-dropdown {
-      @extend .recent-item-text;
+      &:extend(.recent-item-text);
       margin-right: 2px;
     }
   }
