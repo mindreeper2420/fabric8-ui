@@ -1,11 +1,11 @@
 @import '../../../assets/stylesheets/base';
 
-@mixin transform-translate($x, $y) {
-  -webkit-transform: translate($x, $y);
-      -ms-transform: translate($x, $y);
-          transform: translate($x, $y);
+@mixin transform-translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+          transform: translate(@x, @y);
 }
-.fifty-shades-of-grey { color: $color-pf-black-500; }
+.fifty-shades-of-grey { color: @color-pf-black-500; }
 .card-pf-body {
   &.analytical-report-body {
     position: relative;
