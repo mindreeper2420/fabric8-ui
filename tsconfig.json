@@ -12,6 +12,13 @@
     "noUnusedLocals": false,
     "baseUrl": "./src",
     "paths": {
+      "patternfly": ["node_modules/patternfly"],
+      "font-awesome": ["node_modules/font-awesome"],
+      "bootstrap": ["node_modules/bootstrap"]
+    },
+    "alias": {
+      Patternfly: path.resolve(__dirname, './node_modules/patternfly/src/less/'),
+      Bootstrap: path.resolve(__dirname, './node_modules/bootstrap/less/');
     },
     "lib": [
       "dom",
@@ -33,7 +40,9 @@
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
-    "useWebpackText": true
+    "useWebpackText": true,
+    "doTypeCheck": true,
+    "useTranspileModule": true
   },
   "compileOnSave": false,
   "buildOnSave": false,

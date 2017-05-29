@@ -1,4 +1,4 @@
-   @import '../../../../assets/stylesheets/base';
+   @import (reference) '../../../../assets/stylesheets/_base';
   :host {
    @panel-item-shadow-offset:3px;
    @panel-item-spacing: 0;
@@ -93,7 +93,7 @@
 
           &:hover {
             border: solid 2px @color-pf-blue-300;
-            box-shadow: @panel-item-shadow-offset  @panel-item-shadow-blur-radius @panel-item-shadow-spread-radius darken($panel-item-layout-block-shadow-color, 10%);
+            box-shadow: @panel-item-shadow-offset  @panel-item-shadow-blur-radius @panel-item-shadow-spread-radius darken(@panel-item-layout-block-shadow-color, 10%);
           }
           &:active {
             padding-left: @panel-item-spacing - 1px;
@@ -120,7 +120,7 @@
             }
 
             border: solid 2px @color-pf-blue-400;
-            box-shadow: @panel-item-shadow-offset  @panel-item-shadow-blur-radius @panel-item-shadow-spread-radius darken($panel-item-layout-block-shadow-color, 20%);
+            box-shadow: @panel-item-shadow-offset  @panel-item-shadow-blur-radius @panel-item-shadow-spread-radius darken(@panel-item-layout-block-shadow-color, 20%);
           }
 
 

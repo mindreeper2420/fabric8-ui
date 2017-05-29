@@ -28,31 +28,6 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
-
-
-const lessModules = [
-  {
-    name: 'bootstrap'
-  }, {
-    name: 'font-awesome',
-    module: 'font-awesome',
-    path: 'font-awesome',
-    less: 'less'
-  }, {
-    name: 'patternfly',
-    module: 'patternfly'
-  }
-];
-
-lessModules.forEach(function (val) {
-  val.module = val.module || val.name + '-less';
-  val.path = val.path || path.join(val.module, 'assets');
-  val.modulePath = val.modulePath || path.join('node_modules', val.path);
-  val.less = val.less || path.join('stylesheets');
-  val.lessPath = path.join(helpers.root(), val.modulePath, val.less);
-});
-
-
 /*
  * Webpack Constants
  */
@@ -233,9 +208,7 @@ module.exports = function (options) {
               }, {
                 loader: 'less-loader',
                 options: {
-                  includePaths: lessModules.map(function (val) {
-                    return val.lessPath;
-                  }),
+                  paths: ['./node_modules/patternfly/src/less'],
                   sourceMap: true
                 }
               }
@@ -256,9 +229,7 @@ module.exports = function (options) {
             }, {
               loader: 'less-loader',
               options: {
-                includePaths: lessModules.map(function (val) {
-                  return val.lessPath;
-                }),
+                paths: ['./node_modules/patternfly/src/less'],
                 sourceMap: true
               }
             }
