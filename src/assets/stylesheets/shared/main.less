@@ -12,7 +12,7 @@ body {
 // custom classes
 .containerPadd { padding: em(96) 0 em(66) 0; }
 .containerPadd-nologin { padding-bottom: 0; }
-.truncate { @include truncate; }
+.truncate { .truncate; }
 .truncate-ellipsis {
   display: table;
   table-layout: fixed;
@@ -21,7 +21,7 @@ body {
 .dn { display: none; }
 .dib { display: inline-block; }
 .db { display: block; }
-.textCenter { text-align: @textCenter; }
+.textCenter { .text-center; }
 @media (max-width: @grid-float-breakpoint) {
   .mobdn { display: none; }
   .list-view-pf {

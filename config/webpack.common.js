@@ -28,6 +28,35 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
+const lessModules = [
+  {
+    name: 'bootstrap',
+    module: 'bootstrap',
+    path: 'patternfly/node_modules/bootstrap',
+    less: 'less'
+
+  }, {
+    name: 'font-awesome',
+    module: 'font-awesome',
+    path: 'patternfly/node_modules/font-awesome',
+    less: 'less'
+  }, {
+    name: 'patternfly',
+    module: 'patternfly',
+    path: 'patternfly/src',
+    less: 'less'
+  }
+];
+
+lessModules.forEach(function (val) {
+  val.module = val.module || val.name + '-less';
+  // val.path = val.path || path.join(val.module, 'assets');
+  val.modulePath = val.modulePath || path.join('node_modules', val.path);
+  val.less = val.less || path.join('less');
+  val.lessPath = path.join(helpers.root(), val.modulePath, val.less);
+});
+
+
 /*
  * Webpack Constants
  */
@@ -193,48 +222,52 @@ module.exports = function (options) {
             }
           ],
         },
-        {
-          test: /^(?!.*component).*\.less$/,
-          use: extractCSS.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  minimize: isProd,
-                  sourceMap: true,
-                  context: '/'
-                }
-              }, {
-                loader: 'less-loader',
-                options: {
-                  paths: ['./node_modules/patternfly/src/less'],
-                  sourceMap: true
-                }
-              }
-            ],
-          })
-        }, {
-          test: /\.component\.less$/,
-          use: [
-            {
-              loader: 'style-loader'
-            }, {
-              loader: 'css-loader',
-              options: {
-                minimize: isProd,
-                sourceMap: true,
-                context: '/'
-              }
-            }, {
-              loader: 'less-loader',
-              options: {
-                paths: ['./node_modules/patternfly/src/less'],
-                sourceMap: true
-              }
-            }
-          ],
-        },
+        // {
+        //   test: /^(?!.*component).*\.less$/,
+        //   use: extractCSS.extract({
+        //     fallback: 'style-loader',
+        //     use: [
+        //       {
+        //         loader: 'css-loader',
+        //         options: {
+        //           minimize: isProd,
+        //           sourceMap: true,
+        //           context: '/'
+        //         }
+        //       }, {
+        //         loader: 'less-loader',
+        //         options: {
+        //           includePaths: lessModules.map(function (val) {
+        //             return val.lessPath;
+        //           }),
+        //           sourceMap: true
+        //         }
+        //       }
+        //     ],
+        //   })
+        // }, {
+        //   test: /\.component\.less$/,
+        //   use: [
+        //     {
+        //       loader: 'to-string-loader'
+        //     }, {
+        //       loader: 'css-loader',
+        //       options: {
+        //         minimize: isProd,
+        //         sourceMap: true,
+        //         context: '/'
+        //       }
+        //     }, {
+        //       loader: 'less-loader',
+        //       options: {
+        //         includePaths: lessModules.map(function (val) {
+        //           return val.lessPath;
+        //         }),
+        //         sourceMap: true
+        //       }
+        //     }
+        //   ],
+        // },
 
         /**
          * Fil e loader for supporting fonts, for example, in CSS files.
@@ -272,8 +305,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-
-      extractCSS,
       /*
        * Plugin: ForkCheckerPlugin
        * Description: Do type checking in a separate process, so webpack don't need to wait.

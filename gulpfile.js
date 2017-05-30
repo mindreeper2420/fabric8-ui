@@ -1,5 +1,6 @@
 const gulp = require('gulp'),
   del = require('del'),
+  sourcemaps = require('gulp-sourcemaps'),
   changeCase = require('change-case'),
   replace = require('gulp-string-replace'),
   rename = require('gulp-rename'),
@@ -15,12 +16,20 @@ const gulp = require('gulp'),
     .demandOption(['c', 'd'])
     .argv;
 
+var appSrc = 'src';
+var libraryDist = 'dist';
+
 function copyToDest(srcArr) {
   return gulp.src(srcArr)
     .pipe(gulp.dest(function (file) {
       return libraryDist + file.base.slice(__dirname.length); // save directly to dist
     }));
 }
+
+//Less compilation and minifiction - adopted from sass compilation, needs work
+gulp.task('transpile-less', function () {
+  return transpileLESS(appSrc + '/app/**/*.less');
+});
 
 gulp.task('create', function () {
   let headerCase = argv.c;
@@ -35,4 +44,12 @@ gulp.task('create', function () {
     .pipe(replace(new RegExp(origHeaderCase, "g"), headerCase))
     .pipe(replace(new RegExp(origPascalCase, "g"), pascalCase))
     .pipe(gulp.dest(`${dest}/${headerCase}`));
+});
+
+gulp.task('watch', ['build'], function () {
+  gulp.watch([appSrc + '/app/**/*.less']).on('change', function (e) {
+    console.log(e.path + ' has been changed. Updating.');
+    transpileLESS(e.path);
+    // updateWatchDist();
+  });
 });

@@ -5,7 +5,7 @@
   >div {
     margin-top: em(15);
     label {
-      width: @width100;
+      .width-100;
       font-size: em(14);
     }
     p {
@@ -26,28 +26,26 @@
     position: absolute;
     list-style: none;
     padding: 0;
-    border: 1px solid @color-pf-black-400;
+    border: 1px solid;
+    border-color: @color-pf-black-400;
     background: @color-pf-white;
     li {
-      width: @width100;
+      .width-100;
       float: left;
       padding: em(2);
       cursor: pointer;
     }
   }
   .teamMembershipInputBlock {
-    >div {
-      padding: 0;
+    >div { padding: 0;
       label {
-        width: @width100 - 10%;
+        width: calc(100% - 10%);
         padding-left: em(20);
         font-weight: 500;
         span {
           width: @width100;
           float: left;
-          &:nth-child(2) {
-            color: @color-pf-black-500;
-          }
+          &:nth-child(2) { color: @color-pf-black-500; }
         }
       }
     }

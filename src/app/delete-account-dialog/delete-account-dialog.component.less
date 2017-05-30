@@ -5,7 +5,7 @@
   > div {
     margin-top: em(15);
     label {
-      width: @width100;
+      .width-100;
       font-size: em(14);
     }
     p {
@@ -30,7 +30,7 @@
     border-color: @color-pf-black-400;
     background: @color-pf-white;
     li {
-      width: @width100;
+      .width-100;
       float: left;
       padding: em(2);
       cursor: pointer;
@@ -40,11 +40,11 @@
     > div {
       padding: 0;
       label {
-        width: @width100 - 10%;
+        width: 90%;
         padding-left: em(20);
         font-weight: 500;
         span {
-          width: @width100;
+          .width-100;
           float: left;
           &:nth-child(2) { color: @color-pf-black-500; }
         }

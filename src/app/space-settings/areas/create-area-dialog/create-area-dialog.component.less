@@ -1,10 +1,8 @@
 @import (reference) '../../../../assets/stylesheets/_base';
-
 .create-dialog {
   flex: 1;
   padding: 20px;
 }
-
 .create-dialog-header {
   position: relative;
   display: flex;
@@ -12,17 +10,11 @@
   align-items: center;
   flex-direction: row;
   background-color: @color-pf-black-300;
-  border-bottom: 1px solid @color-pf-black-500;
-
-  .glyphicon-remove {
-    cursor: pointer;
-  }
+  border-bottom: 1px solid;
+  border-bottom-color: @color-pf-black-500;
+  .glyphicon-remove { cursor: pointer; }
 }
-
-.create-fieldset {
-  padding: 20px;
-}
-
+.create-fieldset { padding: 20px; }
 .create-footer {
   display:flex;
   flex-direction: row;

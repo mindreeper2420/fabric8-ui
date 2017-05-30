@@ -3,22 +3,22 @@
 
 // functions
 //convert px to em/rem
-@function em(@px) {
-  @return (@px / @em-base-font-size) * 1em;
-}
+// @function em(@px) {
+//   @return (@px / @em-base-font-size) * 1em;
+// }
 
-@function rem(@px) {
-  @return (@px / @rem-base-font-size) * 1rem;
-}
+// @function rem(@px) {
+//   @return (@px / @rem-base-font-size) * 1rem;
+// }
 
 //custom mixins
-@mixin truncate() {
+.truncate() {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@mixin transform(@transform) {
+.transform(@transform) {
   -webkit-transform: @transform;
      -moz-transform: @transform;
       -ms-transform: @transform;
@@ -26,7 +26,7 @@
           transform: @transform;
 }
 
-@mixin transition(@transition) {
+.transition(@transition) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
       -ms-transition: @transition;
@@ -34,14 +34,14 @@
           transition: @transition;
 }
 
-@mixin borderRadius(@radius) {
+.borderRadius(@radius) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
        -o-border-radius: @radius;
           border-radius: @radius;
 }
 
-@mixin Border(@borderwidth, @borderStyle, @borderColor) {
+.Border(@borderwidth, @borderStyle, @borderColor) {
   -webkit-border-width: @borderwidth;
   -webkit-border-color: @borderColor;
   -webkit-border-style: @borderStyle;
@@ -57,7 +57,7 @@
 }
 
 //multiline truncate
-@mixin multiline-truncate(@line-height, @line-count, @bg-color) {
+.multiline-truncate(@line-height, @line-count, @bg-color) {
   position: relative;
   overflow: hidden;
   margin-right: -1em;
@@ -82,9 +82,9 @@
   }
 }
 
-@mixin dib { display: inline-block; }
+.dib { display: inline-block; }
 
-@mixin fill-container {
+.fill-container {
     position: absolute;
     margin: 0;
     padding: 0;
