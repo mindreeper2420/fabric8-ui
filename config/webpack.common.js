@@ -243,6 +243,11 @@ module.exports = function (options) {
                   // paths: [
                   //   path.resolve(__dirname, "node_modules")
                   // ],
+                  paths: [
+                    //path.resolve(__dirname, "node_modules"),
+                    path.resolve(__dirname, "../node_modules/patternfly/src/less"),
+                    path.resolve(__dirname, "../node_modules/patternfly/node_modules")
+                  ],
                   sourceMap: true
                 }
               }
@@ -266,9 +271,11 @@ module.exports = function (options) {
                 // includePaths: lessModules.map(function (val) {
                 //   return val.lessPath;
                 // }),
-                // paths: [
-                //   path.resolve(__dirname, "node_modules")
-                // ],
+                paths: [
+                  //path.resolve(__dirname, "node_modules"),
+                  path.resolve(__dirname, "../node_modules/patternfly/src/less"),
+                  path.resolve(__dirname, "../node_modules/patternfly/node_modules")
+                ],
                 sourceMap: true
               }
             }
