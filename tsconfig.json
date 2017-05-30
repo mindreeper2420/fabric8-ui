@@ -17,8 +17,8 @@
       "bootstrap": ["node_modules/bootstrap"]
     },
     "alias": {
-      Patternfly: path.resolve(__dirname, './node_modules/patternfly/src/less/'),
-      Bootstrap: path.resolve(__dirname, './node_modules/bootstrap/less/');
+      "Patternfly": ["path.resolve(__dirname, './node_modules/patternfly/src/less/')"],
+      "Bootstrap": ["path.resolve(__dirname, './node_modules/bootstrap/less/')"]
     },
     "lib": [
       "dom",
