@@ -133,8 +133,12 @@ module.exports = function (options) {
        *
        * See: https://webpack.js.org/configuration/resolve/#resolve-modules
        */
-      modules: [helpers.root('src'), helpers.root('node_modules')]
+      modules: [helpers.root('src'), helpers.root('node_modules'),
 
+        // Todo: fabric8-stack-analysis-ui/src/app/stack/overview/chart-component.js cannot locate c3
+        helpers.root("node_modules/patternfly/node_modules/c3"),
+        helpers.root("node_modules/patternfly/node_modules/d3")
+      ]
     },
 
     /*
