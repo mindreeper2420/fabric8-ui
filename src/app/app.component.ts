@@ -36,6 +36,8 @@ export class AppComponent {
   public featureEnablementLevel: string;
   public disconnectedStateConfig: EmptyStateConfig;
   private lastPageToTryGitHub: string;
+  private showAddSpace: boolean = false;
+
   @ViewChild('connectToGithubModal') connectToGithubModal: TemplateRef<any>;
 
   constructor(
@@ -104,6 +106,10 @@ export class AppComponent {
     this.broadcaster.on('showDisconnectedFromGitHub').subscribe((event) => {
       this.lastPageToTryGitHub = event['location'];
       this.showGitHubConnectModal();
+    });
+
+    this.broadcaster.on('showAddSpace').subscribe((show: boolean) => {
+      this.showAddSpace = show;
     });
 
     this.disconnectedStateConfig = {
