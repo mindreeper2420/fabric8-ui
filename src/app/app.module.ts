@@ -103,6 +103,7 @@ import { witApiUrlProvider }             from './shared/wit-api.provider';
 import { ConfigStore }               from './base/config.store';
 import { ErrorService }              from './layout/error/error.service';
 import { ProfileService }            from './profile/profile.service';
+import { LauncherModule }      from './space/launcher/launcher.module';
 import { SpaceWizardModule }         from './space/wizard/space-wizard.module';
 
 // About Modal
@@ -142,6 +143,7 @@ export type StoreType = {
     HttpModule,
     KubernetesRestangularModule,
     KubernetesStoreModule,
+    LauncherModule,
     ListModule,
     LocalStorageModule.withConfig({
       prefix: 'fabric8',
