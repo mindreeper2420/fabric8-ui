@@ -1,0 +1,51 @@
+@import (reference) '../../../../node_modules/patternfly/dist/less/color-variables.less';
+
+.modal {
+  &-open {
+    main {
+      -webkit-filter: blur(10px);
+      -moz-filter: blur(10px);
+      filter: blur(10px);
+    }
+  }
+  &-header,
+  &-footer {
+    border: 0;
+  }
+  &-header {
+    background-color: transparent;
+  }
+  &-title {
+    font-size: 1.2em; // matches h4
+  }
+  &-backdrop.in { opacity: .85; }
+  &-lg { width: 75%; }
+  &-content {
+    background-color: transparent;
+    color: @color-pf-white;
+    box-shadow: none;
+    border: 0;
+  }
+  .form-control {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid @color-pf-white;
+    border-radius: 0;
+    font-size: 1.2em;
+  }
+  input::placeholder,
+  select {
+    font-style: italic;
+    color: @color-pf-white;
+  }
+  input:hover,
+  select:hover,
+  textarea:hover,
+  textarea:active {
+    border-bottom-color: @color-pf-blue;
+  }
+  textarea {
+    resize: none;
+    overflow-y: auto;
+  }
+}

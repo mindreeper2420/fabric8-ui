@@ -5,12 +5,12 @@
             (click)="cancel()">
       <span aria-hidden="true">&times;</span>
     </button>
-    <dt class="modal-title">Create Space</dt>
+    <dt class="modal-title">Create a New Space</dt>
   </div>
   <section class="container-fluid padding-top-standard-offset">
     <div class="row">
-      <div class="col-xs-12">
-         <form class="form-horizontal" #spaceForm="ngForm">
+      <div class="col-sm-6">
+         <form class="form" #spaceForm="ngForm">
           <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
             <div [hidden]="!name.errors.required">
               <span class="pficon pficon-error-circle-o"></span>
@@ -34,32 +34,38 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="name" class="control-label col-sm-2">Name</label>
-            <div class="col-sm-10">
-              <input id="name" name="name" type="text" class="form-control" placeholder="Enter a unique name for your space" [(ngModel)]="space.name" #name="ngModel" required uniqueSpaceName validSpaceName/>
-            </div>
+            <label for="developmentProcess" class="control-label">Development Process</label>
+            <select class="form-control" id="developmentProcess" [(ngModel)]="selectedTemplate" name="developmentProcess">
+              <option *ngFor="let p of spaceTemplates" [ngValue]="p">{{p.name}}</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="developmentProcess" class="control-label col-sm-2">Template</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="developmentProcess" [(ngModel)]="selectedTemplate" name="developmentProcess">
-                <option *ngFor="let p of spaceTemplates" [ngValue]="p">{{p.name}}</option>
-              </select>
-            </div>
+            <label for="name" class="control-label">Space Name</label>
+            <input id="name" name="name" type="text" class="form-control" placeholder="Enter a unique name for your space" [(ngModel)]="space.name" #name="ngModel" required uniqueSpaceName validSpaceName/>
           </div>
           <div class="form-group">
-            <div *ngIf="selectedTemplate?.description" class="padding-bottom-standard-offset col-sm-10 col-sm-offset-2">
-              <div class="row">
-                <div class="col-sm-12">
-                  <span class="pficon pficon-info "></span><span class="padding-left-5">{{selectedTemplate.description}}</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-10 col-sm-offset-2">
-              This space will be <strong>public</strong>, which means that anyone can access this code and participate
-              in creating the product.
-            </div>
+            <p *ngIf="selectedTemplate?.description">
+              <i class="pficon pficon-info"></i>
+              {{selectedTemplate.description}}
+            </p>
           </div>
+         </form>
+      </div>
+      <div class="col-sm-6">
+         <form class="form">
+           <div class="form-group">
+             <label>What are Spaces?</label>
+             <p>
+               OpenShift.io uses spaces to... OpenShift.io uses spaces to OpenShift.io uses spaces ...
+               OpenShift.io  spaces to... OpenShift.io uses  to... .io uses spaces to...
+             </p>
+           </div>
+           <div class="form-group">
+             <p>
+               <i class="pficon pficon-warning"></i>
+               <b>This space will be public</b>, which means that anyone can access the code and participate in creating the product.
+             </p>
+           </div>
          </form>
       </div>
     </div>
@@ -67,7 +73,7 @@
   <footer class="container-fluid padding-top-standard-offset padding-bottom-standard-offset">
     <div class="row">
       <div class="col-sm-12 wizard-step-tool-bar button-right">
-        <button id="createSpaceButton" class="btn btn-primary" [disabled]="!spaceForm.form.valid" type="submit">Create</button>
+        <button id="createSpaceButton" class="btn btn-primary" [disabled]="!spaceForm.form.valid" type="submit">Ok</button> or press <b>ENTER</b>
       </div>
     </div>
   </footer>
