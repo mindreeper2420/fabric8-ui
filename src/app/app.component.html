@@ -5,6 +5,12 @@
     [notifications]="notifications.current"
     (onActionSelect)="handleAction($event)">
 </pfng-toast-notification-list>
+<div *ngIf="showAddSpace; else showNothing">
+  <launcher></launcher>
+</div>
+<ng-template #showNothing>
+  <div class="hidden"></div>
+</ng-template>
 <main class="">
   <div class="">
     <router-outlet name="action"></router-outlet>
