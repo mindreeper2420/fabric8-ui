@@ -160,6 +160,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.modalRef.hide();
   }
 
+  showAddSpace(): void {
+    this.broadcaster.broadcast('showAddSpace', true);
+  }
+
   selectFlow($event) {
     this.selectedFlow = $event.flow;
     this.space = $event.space;

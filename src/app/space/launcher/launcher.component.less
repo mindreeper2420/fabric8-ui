@@ -3,9 +3,9 @@
 
 .blurred-background {
   position: fixed;
-  top: 0;
+  top: -20px;
   right: -20px;
-  bottom: 0;
+  bottom: -20px;
   left: -20px;
   z-index: 1100;
   background-color: rgba(5, 5, 5, .6);
@@ -18,7 +18,7 @@
   filter: blur(20px);
 }
 
-.wizard {
+.create-launcher {
   position: fixed;
   top: 0;
   right: 0;
@@ -39,62 +39,37 @@
     position: absolute;
     top: 25%;
     padding: 35px;
-  }
-  &-header,
-  &-footer {
-    border: 0;
-  }
-  &-header {
-    background-color: transparent;
-  }
-  &-title {
-    font-size: 1.2em; // matches h4
-  }
-  &-backdrop.in { opacity: .85; }
-  &-lg { width: 75%; }
-  &-content {
-    background-color: transparent;
-    color: @color-pf-white;
-    box-shadow: none;
-    border: 0;
-  }
-  .form-group {
-    margin-top: 35px;
-  }
-  .form-control {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid @color-pf-white;
-    border-radius: 0;
-    font-size: 1.2em;
-    color: @color-pf-white;
-    &:focus {
-      border-bottom-color: @color-pf-blue;
-      box-shadow: none;
+    &-header,
+    &-footer {
+      background-color: transparent;
+      border: 0;
     }
-  }
-  input::placeholder,
-  select {
-    font-style: italic;
-    color: @color-pf-white;
-  }
-  input:hover,
-  input:focus,
-  textarea:hover,
-  textarea:active {
-    border-bottom-color: @color-pf-blue;
-  }
-  textarea {
-    resize: none;
-    overflow-y: auto;
-  }
-  .form-group {
-    margin-top: 35px;
-  }
-  .form-control {
-    color: @color-pf-white;
-  }
-  &-step {
+    &-title {
+      font-size: 1.2em; // matches h4
+    }
+    &-backdrop.in { opacity: .85; }
+    &-lg { width: 75%; }
+    &-content {
+      background-color: transparent;
+      color: @color-pf-white;
+      box-shadow: none;
+      border: 0;
+    }
+    .form-group {
+      margin-top: 35px;
+    }
+    .form-control {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid @color-pf-white;
+      border-radius: 0;
+      font-size: 1.2em;
+      color: @color-pf-white;
+      &:focus {
+        border-bottom-color: @color-pf-blue;
+        box-shadow: none;
+      }
+    }
     &-tool-bar {
       margin-top: 15px;
       text-align: center;
@@ -106,6 +81,42 @@
         /* stylelint-enable */
       }
     }
+    .create-launcher-description {
+      border: 0;
+      border-bottom: 1px solid @color-pf-white;
+      min-height: 25px;
+      &:hover,
+      &:active,
+      &:focus {
+        border-bottom-color: @color-pf-blue;
+      }
+    }
+  }
+  input::placeholder,
+  select {
+    font-style: italic;
+    color: @color-pf-white;
+  }
+  input:hover,
+  input:focus,
+  textarea:hover,
+  textarea:active,
+  select:hover,
+  select:active {
+    border-bottom-color: @color-pf-blue;
+  }
+  select:hover {
+    cursor: pointer;
+  }
+  textarea {
+    resize: none;
+    overflow-y: auto;
+  }
+  .form-group {
+    margin-top: 35px;
+  }
+  .form-control {
+    color: @color-pf-white;
   }
   .spaces-information-block {
     margin-top: 35px;
