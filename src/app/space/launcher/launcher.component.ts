@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Notification, Notifications, NotificationType } from 'ngx-base';
+import { Broadcaster, Logger, Notification, Notifications, NotificationType } from 'ngx-base';
 import { Context, SpaceNamePipe, SpaceService } from 'ngx-fabric8-wit';
 import { ProcessTemplate } from 'ngx-fabric8-wit';
 import { Space, SpaceAttributes } from 'ngx-fabric8-wit';
@@ -37,7 +37,8 @@ export class LauncherComponent implements OnInit, OnDestroy {
     private spaceNamespaceService: SpaceNamespaceService,
     private spaceNamePipe: SpaceNamePipe,
     private spacesService: SpacesService,
-    private context: ContextService
+    private context: ContextService,
+    private broadcaster: Broadcaster
   ) {
     this.spaceTemplates = dummy.processTemplates;
     this.space = this.createTransientSpace();
@@ -108,6 +109,10 @@ export class LauncherComponent implements OnInit, OnDestroy {
 
   cancel() {
     this.onCancel.emit({});
+  }
+
+  hideAddSpace(): void {
+    this.broadcaster.broadcast('showAddSpace', false);
   }
 
   private createTransientSpace(): Space {
