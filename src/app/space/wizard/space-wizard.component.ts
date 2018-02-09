@@ -111,8 +111,9 @@ export class SpaceWizardComponent implements OnInit, OnDestroy {
     this.onCancel.emit({});
   }
 
-  showAddSpace(): void {
-    this.broadcaster.broadcast('showAddSpace', true);
+  showAddSpaceOverlay(): void {
+    this.broadcaster.broadcast('showAddSpaceOverlay', true);
+    this.cancel();
   }
 
   private createTransientSpace(): Space {

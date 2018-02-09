@@ -1,7 +1,11 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Broadcaster, Logger, Notification, Notifications, NotificationType } from 'ngx-base';
+import { Broadcaster, Notification, Notifications, NotificationType } from 'ngx-base';
 import { Context, SpaceNamePipe, SpaceService } from 'ngx-fabric8-wit';
 import { ProcessTemplate } from 'ngx-fabric8-wit';
 import { Space, SpaceAttributes } from 'ngx-fabric8-wit';
@@ -14,39 +18,41 @@ import { SpaceNamespaceService } from 'app/shared/runtime-console/space-namespac
 import { SpacesService } from 'app/shared/spaces.service';
 
 @Component({
-  selector: 'launcher',
-  templateUrl: './launcher.component.html',
-  styleUrls: ['./launcher.component.less']
+  encapsulation: ViewEncapsulation.None,
+  selector: 'f8-add-space-overlay',
+  styleUrls: ['./add-space-overlay.component.less'],
+  templateUrl: './add-space-overlay.component.html'
 })
-export class LauncherComponent implements OnInit, OnDestroy {
-
-  @Output('onSelect') onSelect = new EventEmitter();
-  @Output('onCancel') onCancel = new EventEmitter();
-
-  spaceTemplates: ProcessTemplate[];
-  selectedTemplate: ProcessTemplate;
-  space: Space;
+export class AddSpaceOverlayComponent implements OnInit {
   currentSpace: Space;
+  selectedTemplate: ProcessTemplate;
+  spaceTemplates: ProcessTemplate[];
+  space: Space;
 
-  constructor(
-    private router: Router,
-    public dummy: DummyService,
-    private spaceService: SpaceService,
-    private notifications: Notifications,
-    private userService: UserService,
-    private spaceNamespaceService: SpaceNamespaceService,
-    private spaceNamePipe: SpaceNamePipe,
-    private spacesService: SpacesService,
-    private context: ContextService,
-    private broadcaster: Broadcaster
-  ) {
+  constructor(private router: Router,
+              public dummy: DummyService,
+              private spaceService: SpaceService,
+              private notifications: Notifications,
+              private userService: UserService,
+              private spaceNamespaceService: SpaceNamespaceService,
+              private spaceNamePipe: SpaceNamePipe,
+              private spacesService: SpacesService,
+              private context: ContextService,
+              private broadcaster: Broadcaster) {
     this.spaceTemplates = dummy.processTemplates;
     this.space = this.createTransientSpace();
-
   }
 
-  ngOnDestroy() {
-    this.finish();
+  ngOnInit() {
+    const srumTemplates = this.spaceTemplates.filter(template => template.name === 'Scenario Driven Planning');
+    if (srumTemplates && srumTemplates.length > 0) {
+      this.selectedTemplate = srumTemplates[0];
+    }
+    this.context.current.subscribe((ctx: Context) => {
+      if (ctx.space) {
+        this.currentSpace = ctx.space;
+      }
+    });
   }
 
   /*
@@ -75,49 +81,26 @@ export class LauncherComponent implements OnInit, OnDestroy {
           .catch(err => Observable.of(createdSpace));
       })
       .subscribe(createdSpace => {
-        this.router.navigate([createdSpace.relationalData.creator.attributes.username,
-          createdSpace.attributes.name]);
-        this.finish();
-      },
-      err => {
-        console.log('Error creating space', err);
-        this.notifications.message(<Notification> {
-          message: `Failed to create "${this.space.name}"`,
-          type: NotificationType.DANGER
+          this.router.navigate([createdSpace.relationalData.creator.attributes.username,
+            createdSpace.attributes.name]);
+          this.showAddAppOverlay();
+          this.hideAddSpaceOverlay();
+        },
+        err => {
+          console.log('Error creating space', err);
+          this.notifications.message(<Notification> {
+            message: `Failed to create "${this.space.name}"`,
+            type: NotificationType.DANGER
+          });
         });
-        this.finish();
-      });
-      this.hideAddSpace();
   }
 
-  ngOnInit() {
-    const srumTemplates = this.spaceTemplates.filter(template => template.name === 'Scenario Driven Planning');
-    if (srumTemplates && srumTemplates.length > 0) {
-      this.selectedTemplate = srumTemplates[0];
-    }
-    this.context.current.subscribe((ctx: Context) => {
-      if (ctx.space) {
-        this.currentSpace = ctx.space;
-        console.log(`ForgeWizardComponent::The current space has been updated to ${this.currentSpace.attributes.name}`);
-      }
-    });
+  hideAddSpaceOverlay(): void {
+    this.broadcaster.broadcast('showAddSpaceOverlay', false);
   }
 
-  finish() {
-    console.log(`finish ...`);
-    this.onSelect.emit({flow: 'selectFlow', space: this.space.attributes.name});
-  }
-
-  cancel() {
-    this.onCancel.emit({});
-  }
-
-  showImports(): void {
-    this.broadcaster.broadcast('showImports', true);
-  }
-
-  hideAddSpace(): void {
-    this.broadcaster.broadcast('showAddSpace', false);
+  showAddAppOverlay(): void {
+    this.broadcaster.broadcast('showAddAppOverlay', true);
   }
 
   private createTransientSpace(): Space {

@@ -6,8 +6,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { Fabric8WitModule } from 'ngx-fabric8-wit';
 
 import { RecentPipelinesWidgetModule } from '../dashboard-widgets/recent-pipelines-widget/recent-pipelines-widget.module';
+import { AddSpaceOverlayModule } from '../space/add-space-overlay/add-space-overlay.module';
 import { ForgeWizardModule } from '../space/forge-wizard/forge-wizard.module';
-import { LauncherModule } from '../space/launcher/launcher.module';
 import { SpaceWizardModule } from '../space/wizard/space-wizard.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -15,10 +15,10 @@ import { WorkItemWidgetModule } from './work-item-widget/work-item-widget.module
 
 @NgModule({
   imports: [
+    AddSpaceOverlayModule,
     CommonModule,
     HomeRoutingModule,
     SpaceWizardModule,
-    LauncherModule,
     ForgeWizardModule,
     Fabric8WitModule,
     WorkItemWidgetModule,
