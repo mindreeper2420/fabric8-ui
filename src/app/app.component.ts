@@ -37,8 +37,8 @@ export class AppComponent {
   public featureEnablementLevel: string;
   public disconnectedStateConfig: EmptyStateConfig;
   private lastPageToTryGitHub: string;
-  private showAddSpace: boolean = false;
-  private showImports: boolean = false;
+  private showAddAppOverlay: boolean = false;
+  private showAddSpaceOverlay: boolean = false;
 
   @ViewChild('connectToGithubModal') connectToGithubModal: TemplateRef<any>;
 
@@ -112,12 +112,12 @@ export class AppComponent {
       this.showGitHubConnectModal();
     });
 
-    this.broadcaster.on('showAddSpace').subscribe((show: boolean) => {
-      this.showAddSpace = show;
+    this.broadcaster.on('showAddSpaceOverlay').subscribe((show: boolean) => {
+      this.showAddSpaceOverlay = show;
     });
 
-    this.broadcaster.on('showImports').subscribe((show: boolean) => {
-      this.showImports = show;
+    this.broadcaster.on('showAddAppOverlay').subscribe((show: boolean) => {
+      this.showAddAppOverlay = show;
     });
 
     this.disconnectedStateConfig = {

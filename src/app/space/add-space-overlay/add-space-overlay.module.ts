@@ -8,7 +8,7 @@ import { CodebasesService } from '../create/codebases/services/codebases.service
 import { TrustHtmlPipe, TrustStylePipe } from '../wizard/pipes/safe-html.pipe';
 import { SelectedItemsPipe } from '../wizard/pipes/selected-items.pipe';
 import { VisibleItemsPipe } from '../wizard/pipes/visible-items.pipe';
-import { LauncherComponent } from './launcher.component';
+import { AddSpaceOverlayComponent } from './add-space-overlay.component';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { LauncherComponent } from './launcher.component';
     Fabric8WitModule
   ],
   declarations: [
-    LauncherComponent,
+    AddSpaceOverlayComponent,
     UniqueSpaceNameValidatorDirective,
     ValidSpaceNameValidatorDirective,
     SelectedItemsPipe,
@@ -26,7 +26,7 @@ import { LauncherComponent } from './launcher.component';
     TrustStylePipe
   ],
   exports: [
-    LauncherComponent,
+    AddSpaceOverlayComponent,
     UniqueSpaceNameValidatorDirective
   ],
   providers: [
@@ -34,6 +34,6 @@ import { LauncherComponent } from './launcher.component';
   ]
 })
 
-export class LauncherModule {
+export class AddSpaceOverlayModule {
 
 }

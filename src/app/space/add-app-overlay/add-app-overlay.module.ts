@@ -2,28 +2,28 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Fabric8WitModule, UniqueSpaceNameValidatorDirective, ValidSpaceNameValidatorDirective } from 'ngx-fabric8-wit';
+import { Fabric8WitModule } from 'ngx-fabric8-wit';
 
 import { CodebasesService } from '../create/codebases/services/codebases.service';
-import { ImportsComponent } from './imports.component';
+import { AddAppOverlayComponent } from './add-app-overlay.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    Fabric8WitModule
+    Fabric8WitModule,
+    FormsModule
   ],
   declarations: [
-    ImportsComponent
+    AddAppOverlayComponent
   ],
   exports: [
-    ImportsComponent
+    AddAppOverlayComponent
   ],
   providers: [
     CodebasesService
   ]
 })
 
-export class ImportsModule {
+export class AddAppOverlayModule {
 
 }

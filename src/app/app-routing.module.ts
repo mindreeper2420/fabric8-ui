@@ -32,19 +32,6 @@ export const routes: Routes = [
     }
   },
 
-  // App Launcher
-  {
-    path: '_applauncher',
-    resolve: {
-      featureFlagConfig: FeatureFlagResolver
-    },
-    loadChildren: './app-launcher/app-launcher.module#AppLauncherModule',
-    data: {
-      title: 'App Launcher',
-      featureName: 'AppLauncher'
-    }
-  },
-
   // Getting started
   {
     path: '_gettingstarted',
@@ -162,6 +149,20 @@ export const routes: Routes = [
       title: 'Areas'
     }
   },
+
+  // App Launcher
+  {
+    path: ':entity/:space/applauncher',
+    resolve: {
+      featureFlagConfig: FeatureFlagResolver
+    },
+    loadChildren: './space/app-launcher/app-launcher.module#AppLauncherModule',
+    data: {
+      title: 'App Launcher',
+      featureName: 'AppLauncher'
+    }
+  },
+
   {
     path: '**',
     redirectTo: '/_error'

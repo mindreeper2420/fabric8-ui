@@ -35,8 +35,8 @@ export class FlowSelectorComponent {
     this.onCancel.emit({});
   }
 
-  showImports(): void {
-    this.broadcaster.broadcast('showImports', true);
+  showAddAppOverlay(): void {
+    this.broadcaster.broadcast('showAddAppOverlay', true);
   }
 
 }
