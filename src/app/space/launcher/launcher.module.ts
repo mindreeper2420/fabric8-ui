@@ -17,17 +17,17 @@ import { LauncherComponent } from './launcher.component';
     Fabric8WitModule
   ],
   declarations: [
-    LauncherComponent
-    // UniqueSpaceNameValidatorDirective,
-    // ValidSpaceNameValidatorDirective,
-    // SelectedItemsPipe,
-    // VisibleItemsPipe,
-    // TrustHtmlPipe,
-    // TrustStylePipe
+    LauncherComponent,
+    UniqueSpaceNameValidatorDirective,
+    ValidSpaceNameValidatorDirective,
+    SelectedItemsPipe,
+    VisibleItemsPipe,
+    TrustHtmlPipe,
+    TrustStylePipe
   ],
   exports: [
-    LauncherComponent
-    // UniqueSpaceNameValidatorDirective
+    LauncherComponent,
+    UniqueSpaceNameValidatorDirective
   ],
   providers: [
     CodebasesService

@@ -17,17 +17,10 @@ import { SpaceWizardComponent } from './space-wizard.component';
     Fabric8WitModule
   ],
   declarations: [
-    SpaceWizardComponent,
-    UniqueSpaceNameValidatorDirective,
-    ValidSpaceNameValidatorDirective,
-    SelectedItemsPipe,
-    VisibleItemsPipe,
-    TrustHtmlPipe,
-    TrustStylePipe
+    SpaceWizardComponent
   ],
   exports: [
-    SpaceWizardComponent,
-    UniqueSpaceNameValidatorDirective
+    SpaceWizardComponent
   ],
   providers: [
     CodebasesService
