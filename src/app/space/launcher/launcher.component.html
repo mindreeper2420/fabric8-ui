@@ -2,9 +2,6 @@
   <div class="create-launcher">
     <form class="col-sm-8 col-sm-offset-2 create-launcher-step active" role="form" (ngSubmit)="createSpace()" novalidate>
       <div class="create-launcher-step-header">
-        <button class="close" aria-label="Close" type="button"  (click)="hideAddSpace()">
-          <span aria-hidden="true">&times;</span>
-        </button>
         <dt class="create-launcher-step-title">Create a New Space</dt>
       </div>
       <section class="container-fluid padding-top-standard-offset">
@@ -79,7 +76,9 @@
       <footer class="container-fluid padding-top-standard-offset padding-bottom-standard-offset">
         <div class="row">
           <div class="col-sm-12 create-launcher-step-tool-bar button-right">
-            <button id="createSpaceButton" class="btn btn-primary" [disabled]="!spaceForm.form.valid" type="submit">OK</button> or press <b>ENTER</b>
+            <button id="createSpaceButton" class="btn btn-primary" aria-label="Ok" [disabled]="!spaceForm.form.valid" type="submit">OK</button>
+            |
+            <button id="cancelSpaceButton" class="btn btn-link close" aria-label="Cancel" type="button"  (click)="hideAddSpace()">Cancel</button>
           </div>
         </div>
       </footer>
