@@ -38,6 +38,7 @@ export class AppComponent {
   public disconnectedStateConfig: EmptyStateConfig;
   private lastPageToTryGitHub: string;
   private showAddSpace: boolean = false;
+  private showImports: boolean = false;
 
   @ViewChild('connectToGithubModal') connectToGithubModal: TemplateRef<any>;
 
@@ -113,6 +114,10 @@ export class AppComponent {
 
     this.broadcaster.on('showAddSpace').subscribe((show: boolean) => {
       this.showAddSpace = show;
+    });
+
+    this.broadcaster.on('showImports').subscribe((show: boolean) => {
+      this.showImports = show;
     });
 
     this.disconnectedStateConfig = {

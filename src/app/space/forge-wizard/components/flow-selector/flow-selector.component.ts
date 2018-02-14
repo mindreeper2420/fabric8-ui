@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import { Broadcaster, Logger } from 'ngx-base';
 
 @Component({
   selector: 'flow-selector',
@@ -10,7 +10,9 @@ export class FlowSelectorComponent {
   @Input() space: string;
   @Output('onSelect') onSelect = new EventEmitter();
   @Output('onCancel') onCancel = new EventEmitter();
-  constructor() {}
+  constructor(
+    private broadcaster: Broadcaster
+  ) {}
 
   select(flow: string) {
     switch (flow) {
@@ -31,6 +33,10 @@ export class FlowSelectorComponent {
 
   cancel() {
     this.onCancel.emit({});
+  }
+
+  showImports(): void {
+    this.broadcaster.broadcast('showImports', true);
   }
 
 }
