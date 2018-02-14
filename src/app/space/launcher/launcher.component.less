@@ -31,7 +31,7 @@
       color: @color-pf-red-100;
     }
     &-step {
-      margin-top: 10%;
+      margin-top: 5%;
       padding: 35px;
       &-header,
       &-footer {
@@ -89,6 +89,11 @@
         }
       }
     }
+    .development-process-selector {
+      top: 70px;
+      right: 25px;
+      color: @color-pf-white;
+    }
     input::placeholder,
     select {
       font-style: italic;
@@ -130,6 +135,27 @@
       }
       i {
         font-size: @pf-icon-3x;
+      }
+    }
+    .row-space-step-selection {
+      &_header {
+        margin-bottom: 25px;
+      }
+      &_plan-things,
+      &_do-things {
+        display: flex;
+        align-items: center;
+      }
+      &_radio {
+        border-left: 1px solid;
+        border-left-color: @color-pf-black-150;
+        text-align: center;
+      }
+      &_icon {
+        width: 8em;
+      }
+      h2 {
+        margin-top: 0;
       }
     }
   }
