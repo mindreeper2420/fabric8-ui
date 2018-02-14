@@ -75,18 +75,19 @@ export class LauncherComponent implements OnInit, OnDestroy {
           .catch(err => Observable.of(createdSpace));
       })
       .subscribe(createdSpace => {
-          this.router.navigate([createdSpace.relationalData.creator.attributes.username,
-            createdSpace.attributes.name]);
-          this.finish();
-        },
-        err => {
-          console.log('Error creating space', err);
-          this.notifications.message(<Notification> {
-            message: `Failed to create "${this.space.name}"`,
-            type: NotificationType.DANGER
-          });
-          this.finish();
+        this.router.navigate([createdSpace.relationalData.creator.attributes.username,
+          createdSpace.attributes.name]);
+        this.finish();
+      },
+      err => {
+        console.log('Error creating space', err);
+        this.notifications.message(<Notification> {
+          message: `Failed to create "${this.space.name}"`,
+          type: NotificationType.DANGER
         });
+        this.finish();
+      });
+      this.hideAddSpace();
   }
 
   ngOnInit() {
