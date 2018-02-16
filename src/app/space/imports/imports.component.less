@@ -39,8 +39,10 @@
       &_content {
         background-color: transparent;
         color: @color-pf-white;
-        box-shadow: none;
         border: 0;
+        &:hover {
+          box-shadow: 0 1px 6px rgba(255, 255, 255, .35); /* stylelint-disable-line declaration-no-important */
+        }
         i {
           font-size: 8em;
         }
