@@ -5,9 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { Fabric8WitModule, UniqueSpaceNameValidatorDirective, ValidSpaceNameValidatorDirective } from 'ngx-fabric8-wit';
 
 import { CodebasesService } from '../create/codebases/services/codebases.service';
-import { TrustHtmlPipe, TrustStylePipe } from '../wizard/pipes/safe-html.pipe';
-import { SelectedItemsPipe } from '../wizard/pipes/selected-items.pipe';
-import { VisibleItemsPipe } from '../wizard/pipes/visible-items.pipe';
 import { ImportsComponent } from './imports.component';
 
 @NgModule({
