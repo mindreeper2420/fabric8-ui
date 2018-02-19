@@ -112,6 +112,10 @@ export class LauncherComponent implements OnInit, OnDestroy {
     this.onCancel.emit({});
   }
 
+  showImports(): void {
+    this.broadcaster.broadcast('showImports', true);
+  }
+
   hideAddSpace(): void {
     this.broadcaster.broadcast('showAddSpace', false);
   }
