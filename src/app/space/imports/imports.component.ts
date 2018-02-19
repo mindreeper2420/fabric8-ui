@@ -69,4 +69,8 @@ export class ImportsComponent implements OnInit, OnDestroy {
     this.router.navigate(['/_applauncher']);
     this.hideImports();
   }
+  routeToImportApp(): void {
+    this.router.navigate(['/_importapp']);
+    this.hideImports();
+  }
 }
