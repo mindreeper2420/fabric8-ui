@@ -62,4 +62,11 @@ export class ImportsComponent implements OnInit, OnDestroy {
     this.broadcaster.broadcast('showImports', false);
   }
 
+  /**
+   * Helpfer to route to create app
+   */
+  routeToCreateApp(): void {
+    this.router.navigate(['/_applauncher']);
+    this.hideImports();
+  }
 }

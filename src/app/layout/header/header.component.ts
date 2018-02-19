@@ -181,6 +181,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     return (this.router.url.indexOf('_gettingstarted') !== -1);
   }
 
+  get isAppLauncherPage(): boolean {
+    return (this.router.url.indexOf('_applauncher') !== -1);
+  }
+
   private stripQueryFromUrl(url: string) {
     if (url.indexOf('?q=') !== -1) {
       url = url.substring(0, url.indexOf('?q='));
