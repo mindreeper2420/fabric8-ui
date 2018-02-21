@@ -70,7 +70,7 @@
           <button id="createSpaceButton" class="btn btn-primary" [disabled]="!spaceForm.form.valid" type="submit">Create</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="appLauncherEnabled">
         <div class="col-sm-12 text-center">
           <button class="btn btn-link"
                 type="button"
