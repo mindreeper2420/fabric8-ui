@@ -128,7 +128,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.space = $event.space;
   }
 
-  showAddSpace(): void {
-    this.broadcaster.broadcast('showAddSpace', true);
+  showAddSpaceOverlay(): void {
+    this.broadcaster.broadcast('showAddSpaceOverlay', true);
   }
 }

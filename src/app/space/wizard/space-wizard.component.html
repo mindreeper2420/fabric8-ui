@@ -70,11 +70,11 @@
           <button id="createSpaceButton" class="btn btn-primary" [disabled]="!spaceForm.form.valid" type="submit">Create</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="appLauncherEnabled">
         <div class="col-sm-12 text-center">
           <button class="btn btn-link"
                 type="button"
-                (click)="showAddSpace(); cancel();"
+                (click)="showAddSpaceOverlay();"
                 aria-label="Open New Create Space Experience">New Create Space Experience</button>
         </div>
       </div>

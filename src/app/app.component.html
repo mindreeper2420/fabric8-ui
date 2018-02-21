@@ -5,15 +5,8 @@
     [notifications]="notifications.current"
     (onActionSelect)="handleAction($event)">
 </pfng-toast-notification-list>
-<div *ngIf="showImports; else showNothing">
-  <imports class="code-imports fade in"></imports>
-</div>
-<div *ngIf="showAddSpace; else showNothing">
-  <launcher class="launcher fade in"></launcher>
-</div>
-<ng-template #showNothing>
-  <div class="hidden"></div>
-</ng-template>
+<f8-add-space-overlay class="launcher fade in" *ngIf="showAddSpaceOverlay"></f8-add-space-overlay>
+<f8-add-app-overlay class="code-imports fade in" *ngIf="showAddAppOverlay"></f8-add-app-overlay>
 <main class="">
   <div class="">
     <router-outlet name="action"></router-outlet>
