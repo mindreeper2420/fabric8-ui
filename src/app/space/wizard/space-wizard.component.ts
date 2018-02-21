@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { Broadcaster, Logger, Notification, Notifications, NotificationType } from 'ngx-base';
 import { Context, SpaceNamePipe, SpaceService } from 'ngx-fabric8-wit';
@@ -13,6 +14,8 @@ import { DummyService } from 'app/shared/dummy.service';
 import { SpaceNamespaceService } from 'app/shared/runtime-console/space-namespace.service';
 import { SpacesService } from 'app/shared/spaces.service';
 
+import { FeatureTogglesService } from '../../feature-flag/service/feature-toggles.service';
+
 @Component({
   selector: 'space-wizard',
   templateUrl: './space-wizard.component.html',
@@ -23,9 +26,11 @@ export class SpaceWizardComponent implements OnInit, OnDestroy {
   @Output('onSelect') onSelect = new EventEmitter();
   @Output('onCancel') onCancel = new EventEmitter();
 
+  appLauncherEnabled: boolean = false;
   spaceTemplates: ProcessTemplate[];
   selectedTemplate: ProcessTemplate;
   space: Space;
+  subscriptions: Subscription[] = [];
   currentSpace: Space;
 
   constructor(
@@ -38,14 +43,20 @@ export class SpaceWizardComponent implements OnInit, OnDestroy {
     private spaceNamePipe: SpaceNamePipe,
     private spacesService: SpacesService,
     private context: ContextService,
-    private broadcaster: Broadcaster
+    private broadcaster: Broadcaster,
+    private featureTogglesService: FeatureTogglesService
   ) {
     this.spaceTemplates = dummy.processTemplates;
     this.space = this.createTransientSpace();
-
+    this.subscriptions.push(featureTogglesService.getFeature('AppLauncher').subscribe((feature) => {
+      this.appLauncherEnabled = feature.attributes['enabled'] && feature.attributes['user-enabled'];
+    }));
   }
 
   ngOnDestroy() {
+    this.subscriptions.forEach(sub => {
+      sub.unsubscribe();
+    });
     this.finish();
   }
 
