@@ -15,7 +15,6 @@ import { WorkItemWidgetModule } from './work-item-widget/work-item-widget.module
 
 @NgModule({
   imports: [
-    AddSpaceOverlayModule,
     CommonModule,
     HomeRoutingModule,
     SpaceWizardModule,

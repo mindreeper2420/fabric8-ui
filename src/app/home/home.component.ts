@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   loggedInUser: User;
   recent: Space[];
   modalRef: BsModalRef;
-  show: boolean = true;
   private _context: Context;
   private _defaultContext: Context;
   private _spaces: Space[] = [];

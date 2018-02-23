@@ -17,17 +17,10 @@ import { AddSpaceOverlayComponent } from './add-space-overlay.component';
     Fabric8WitModule
   ],
   declarations: [
-    AddSpaceOverlayComponent,
-    UniqueSpaceNameValidatorDirective,
-    ValidSpaceNameValidatorDirective,
-    SelectedItemsPipe,
-    VisibleItemsPipe,
-    TrustHtmlPipe,
-    TrustStylePipe
+    AddSpaceOverlayComponent
   ],
   exports: [
-    AddSpaceOverlayComponent,
-    UniqueSpaceNameValidatorDirective
+    AddSpaceOverlayComponent
   ],
   providers: [
     CodebasesService

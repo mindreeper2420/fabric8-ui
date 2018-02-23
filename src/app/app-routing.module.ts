@@ -155,6 +155,7 @@ export const routes: Routes = [
     path: ':entity/:space/applauncher',
     resolve: {
       context: ContextResolver,
+      featureFlagConfig: FeatureFlagResolver
     },
     loadChildren: './space/app-launcher/app-launcher.module#AppLauncherModule',
     data: {

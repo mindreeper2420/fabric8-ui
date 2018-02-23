@@ -13,16 +13,22 @@ import { SpaceWizardComponent } from './space-wizard.component';
 
 @NgModule({
   imports: [
-    AddSpaceOverlayModule,
     CommonModule,
     FormsModule,
     Fabric8WitModule
   ],
   declarations: [
-    SpaceWizardComponent
+    SpaceWizardComponent,
+    UniqueSpaceNameValidatorDirective,
+    ValidSpaceNameValidatorDirective,
+    SelectedItemsPipe,
+    VisibleItemsPipe,
+    TrustHtmlPipe,
+    TrustStylePipe
   ],
   exports: [
-    SpaceWizardComponent
+    SpaceWizardComponent,
+    UniqueSpaceNameValidatorDirective
   ],
   providers: [
     CodebasesService
