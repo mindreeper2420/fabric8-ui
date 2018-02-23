@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { Area, AreaAttributes, AreaService, Context } from 'ngx-fabric8-wit';
 import { Subscription } from 'rxjs';
@@ -22,6 +23,7 @@ export class CreateAreaDialogComponent {
   @Input() areas: Area[];
   @Output() onAdded = new EventEmitter<Area>();
   @ViewChild('nameInput') nameInput: ElementRef;
+  @ViewChild('areaForm') areaForm: NgForm;
 
   private context: Context;
   private name: string;
@@ -33,15 +35,24 @@ export class CreateAreaDialogComponent {
     this.contexts.current.subscribe(val => this.context = val);
   }
 
-  public focus() {
+  public onOpen() {
+    this.focus();
+  }
+
+  public onClose() {
+    this.clearField();
+    this.resetErrors();
+  }
+
+  focus() {
     this.nameInput.nativeElement.focus();
   }
 
-  public clearField() {
-    this.nameInput.nativeElement.value = '';
+  clearField() {
+    this.areaForm.form.controls['name'].reset();
   }
 
-  public resetError() {
+  resetErrors() {
     this.errors = null;
   }
 
