@@ -88,8 +88,7 @@ export const routes: Routes = [
     },
     loadChildren: './space/analyze/analyze.module#AnalyzeModule',
     data: {
-      title: 'Analyze',
-      featureName: 'newHomeDashboard'
+      title: 'Analyze'
     }
   },
 

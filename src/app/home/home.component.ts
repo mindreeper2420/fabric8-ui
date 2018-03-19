@@ -24,9 +24,8 @@ import { FeatureTogglesService } from '../feature-flag/service/feature-toggles.s
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
   newHomeDashboardEnabled: boolean = false;
-  developmentEnabled: boolean = true; // set to false to hide the in development section
+  developmentEnabled: boolean = false; // set to false to hide for prod - set to true for local development
   myInterval: number = 0;
   noWrapSlides: boolean = true;
   showIndicator: boolean = true;
