@@ -7,7 +7,7 @@ import { Feature, FeatureTogglesService } from '../service/feature-toggles.servi
 
 @Component({
   selector: 'f8-feature-toggle',
-  template: `<ng-content *ngIf="isEnabled"></ng-content>`
+  template: `<ng-content *ngIf="isEnabled" select="[user-level]"></ng-content><ng-content *ngIf="!isEnabled" select="[default-level]"></ng-content>`
 })
 export class FeatureToggleComponent implements OnInit {
   @Input() featureName: string;

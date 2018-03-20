@@ -1,5 +1,5 @@
-<div *ngIf="newHomeDashboardEnabled && developmentEnabled"> <!-- set 'developmentEnabled' to false in component.ts to hide -->
-  <div id="recent-apps-card" class="card-pf f8-card-lg">
+<f8-feature-toggle featureName="newHomeDashboard">
+  <div id="recent-apps-card" class="card-pf f8-card-lg" user-level>
     <div class="card-pf-heading f8-card-heading">
       <h2 class="card-pf-title">
         Recent Workspaces
@@ -35,9 +35,7 @@
       </div> -->
     </div>
   </div>
-</div>
-<div *ngIf="!newHomeDashboardEnabled">
-  <div id="recent-pipelines-card" class="pipelines-widget card-pf f8-card">
+  <div id="recent-pipelines-card" class="pipelines-widget card-pf f8-card" default-level>
     <div class="card-pf-heading f8-card-heading">
       <h2 class="card-pf-title">
         Recent Active Pipelines
@@ -77,4 +75,5 @@
       </ul>
     </div>
   </div>
-</div>
+
+</f8-feature-toggle>

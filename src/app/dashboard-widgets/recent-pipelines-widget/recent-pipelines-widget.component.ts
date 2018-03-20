@@ -20,7 +20,7 @@ export class RecentPipelinesWidgetComponent implements OnInit {
   contextPath: Observable<string>;
   buildConfigs: ConnectableObservable<BuildConfigs>;
   buildConfigsCount: Observable<number>;
-  newHomeDashboardEnabled: boolean = false;
+  newHomeDashboardEnabled: boolean = true;
   developmentEnabled: boolean = false; // set to false to hide for prod - set to true for local development
   subscriptions: Subscription[] = [];
 

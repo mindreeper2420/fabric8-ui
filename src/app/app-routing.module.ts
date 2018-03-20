@@ -83,12 +83,13 @@ export const routes: Routes = [
   {
     path: ':entity/:space',
     resolve: {
-      context: ContextResolver,
-      featureFlagConfig: FeatureFlagResolver
+      context: ContextResolver
+ //     featureFlagConfig: FeatureFlagResolver
     },
     loadChildren: './space/analyze/analyze.module#AnalyzeModule',
     data: {
       title: 'Analyze'
+      // featureName: 'newHomeDashboard'
     }
   },
 
