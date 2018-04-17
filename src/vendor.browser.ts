@@ -24,6 +24,9 @@ import 'ngx-bootstrap';
 //import 'ng2-dnd';
 //
 
+// import Font Awesome 5 CSS
+import '../node_modules/@fortawesome/fontawesome/styles.css';
+
 // import PatternFly CSS
 /* tslint:disable:ordered-imports */
 import '../node_modules/patternfly/dist/css/patternfly.min.css';

@@ -19,6 +19,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
@@ -79,9 +80,9 @@ module.exports = function (options) {
      */
     entry: {
       'polyfills': './src/polyfills.browser.ts',
-      'vendor': './src/vendor.browser.ts',
+      'main': './src/main.browser.ts',
+      'vendor': './src/vendor.browser.ts'
       // 'main': aotMode ? './src/main.browser.aot.ts' : './src/main.browser.ts'
-      'main': './src/main.browser.ts'
     },
 
     /*
@@ -438,6 +439,19 @@ module.exports = function (options) {
           from: 'src/meta'
         }
       ]),
+
+      new HtmlWebpackExternalsPlugin({
+        externals: [
+          {
+            module: 'fontawesome',
+            entry: [
+              'https://use.fontawesome.com/releases/v5.0.10/js/all.js',
+              'https://use.fontawesome.com/releases/v5.0.10/js/v4-shims.js'
+            ],
+            global: 'FontAwesome',
+          },
+        ],
+      }),
 
       /*
        * Plugin: HtmlWebpackPlugin
