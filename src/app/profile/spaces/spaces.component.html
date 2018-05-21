@@ -29,8 +29,8 @@
             </div>
             <div class="col-sm-2">
               <f8-feature-toggle featureName="AppLauncher">
-                <button class="btn btn-primary" type="button" (click)="openForgeWizard(createSpace)" default-level>New</button>
-                <button class="btn btn-primary" type="button" (click)="showAddSpaceOverlay()" user-level>New</button>
+                <button class="pf-c-button pf-is-primary" type="button" (click)="openForgeWizard(createSpace)" default-level>New</button>
+                <button class="pf-c-button pf-is-primary" type="button" (click)="showAddSpaceOverlay()" user-level>New</button>
               </f8-feature-toggle>
             </div>
           </div>
@@ -76,6 +76,6 @@
   <div class="modal-body">
     <h2>Are you sure you want to remove the space</h2>
     <button class="btn btn-cancel" (click)="cancel()">Cancel</button>
-    <button class="btn btn-danger" (click)="removeSpace()">Remove</button>
+    <button class="pf-c-button pf-is-danger" (click)="removeSpace()">Remove</button>
   </div>
 </ng-template>

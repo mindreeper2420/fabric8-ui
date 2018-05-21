@@ -8,11 +8,11 @@
       <div>
         <img *ngIf="verified"
           width="100"
-          height="100" 
+          height="100"
           src='../../../assets/images/trophy.png' />
         <img *ngIf="!verified"
           width="100"
-          height="100" 
+          height="100"
           src='../../../assets/images/neutralface.png' />
         <h1>
           {{ message }}
@@ -23,7 +23,7 @@
       </div>
       <div class="blank-slate-pf-main-action">
         <button type="button"
-          class="btn btn-primary btn-lg"
+          class="pf-c-button pf-is-primary btn-lg"
           (click)="goHome()">
           Continue to my dashboard
         </button>

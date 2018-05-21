@@ -7,11 +7,11 @@
   <form role="form" #areaForm="ngForm" (ngSubmit)="createArea()" novalidate>
     <div class="form">
       <fieldset class="create-fieldset">
-        <div [hidden]="!errors.uniqueValidationFailure" class="alert alert-danger">
+        <div [hidden]="!errors.uniqueValidationFailure" class="pf-c-alert pf-is-danger">
           <span class="pficon pficon-error-circle-o"></span>
           <b>Unique Name</b> A unique name is required to add a new area.
         </div>
-        <div [hidden]="!(inputModel.hasError('required')) || inputModel.pristine" class="alert alert-danger">
+        <div [hidden]="!(inputModel.hasError('required')) || inputModel.pristine" class="pf-c-alert pf-is-danger">
           <span class="pficon pficon-error-circle-o"></span>
           <b>Missing name</b> A name is required to add a new area.
         </div>
@@ -31,8 +31,8 @@
     </div>
     <div class="modal-footer">
       <div class="create-footer">
-        <button class="btn btn-default margin-right-5" type="button" (click)="cancel()">Cancel</button>
-        <button class="btn btn-primary" [disabled]="!areaForm.form.valid" type="submit">Create</button>
+        <button class="pf-c-button pf-is-secondary margin-right-5" type="button" (click)="cancel()">Cancel</button>
+        <button class="pf-c-button pf-is-primary" [disabled]="!areaForm.form.valid" type="submit">Create</button>
       </div>
     </div>
   </form>

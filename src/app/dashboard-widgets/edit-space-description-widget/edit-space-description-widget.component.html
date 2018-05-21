@@ -26,13 +26,13 @@
                 #description>{{space?.attributes.description}}</textarea>
       <div class="f8-space-masthead-description-edit-buttons" *ngIf="isEditing">
         <button id="_btn_cancel_description"
-                class="pull-right btn btn-default edit-space-description-btn"
+                class="pull-right pf-c-button pf-is-secondary edit-space-description-btn"
                 (click)="stopEditingDescription()">
           Cancel
         </button>
         <!--Save icon-->
         <button id="workItemTitle_btn_save_description"
-                class="pull-right btn btn-primary edit-space-description-btn "
+                class="pull-right pf-c-button pf-is-primary edit-space-description-btn "
                 (click)="saveDescription()" >
           Save
         </button>

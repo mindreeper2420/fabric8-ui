@@ -76,9 +76,9 @@
         <p class="cleanup-action-confirm" *ngIf="cleanupStatus === 'completed'">
           You have successfully erased your OpenShift.io environment.  You can now return to your user dashboard.
         </p>
-        <button class="btn btn-danger btn-lg" (click)="confirmErase()" *ngIf="cleanupStatus !== 'completed'">Erase My OpenShift.io Environment</button>
+        <button class="pf-c-button pf-is-danger btn-lg" (click)="confirmErase()" *ngIf="cleanupStatus !== 'completed'">Erase My OpenShift.io Environment</button>
         <div *ngIf="cleanupStatus === 'completedwitherrors' || cleanupStatus === 'completed'" class="cleanup-home-action">
-          <button class="btn btn-primary btn-lg" (click)="goHome()">Take me to my Dashboard</button>
+          <button class="pf-c-button pf-is-primary btn-lg" (click)="goHome()">Take me to my Dashboard</button>
         </div>
       </div>
     </div>

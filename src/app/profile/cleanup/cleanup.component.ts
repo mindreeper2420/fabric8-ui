@@ -44,7 +44,7 @@ export class CleanupComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.notificationClass = 'alert-danger';
+    this.notificationClass = 'pf-c-alert pf-is-danger';
     this.notificationIcon = 'pficon-error-circle-o';
     this.notificationTitle = 'Warning!';
     this.notificationText = 'This action is not reversible!';
@@ -149,7 +149,7 @@ export class CleanupComponent implements OnInit, OnDestroy {
 
   showSuccessNotification(): void {
     this.showNotification = true;
-    this.notificationClass = 'alert-success';
+    this.notificationClass = 'pf-c-alert pf-is-success';
     this.notificationIcon = 'pficon-ok';
     this.notificationTitle = 'Success!';
     this.notificationText = 'Your OpenShift.io environment has been erased!';
@@ -158,7 +158,7 @@ export class CleanupComponent implements OnInit, OnDestroy {
 
   showWarningNotification(): void {
     this.showNotification = true;
-    this.notificationClass = 'alert-warning';
+    this.notificationClass = 'pf-c-alert pf-is-warning';
     this.notificationIcon = 'pficon-warning-triangle-o';
     this.notificationTitle = 'Alert!';
     this.notificationText = 'We were unable to reset your account or erase some of your spaces.';

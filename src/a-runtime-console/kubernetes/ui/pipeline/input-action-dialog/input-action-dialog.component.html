@@ -26,15 +26,15 @@
       </a>
     </span>
 
-    <button class="btn btn-default" autofocus (click)="close()"
+    <button class="pf-c-button pf-is-secondary" autofocus (click)="close()"
             title="Close this dialog">
       Close
     </button>
-    <button class="btn btn-danger" type="submit" value="1" (click)="abort()" *ngIf="inputAction.abortUrl"
+    <button class="pf-c-button pf-is-danger" type="submit" value="1" (click)="abort()" *ngIf="inputAction.abortUrl"
             title="Abort this pipeline">
       Abort
     </button>
-    <button class="btn btn-primary" type="submit" value="0" (click)="proceed()"
+    <button class="pf-c-button pf-is-primary" type="submit" value="0" (click)="proceed()"
             title="Promote this version to the next environment">
       Promote
     </button>

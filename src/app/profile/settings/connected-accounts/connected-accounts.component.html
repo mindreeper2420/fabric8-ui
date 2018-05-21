@@ -25,9 +25,9 @@
               </button>
             </div>
             <div class="col-xs-4">
-              <button *ngIf="gitHubLinked; else connectButton" class="btn btn-default pull-right" (click)="disconnectGitHub()">Disconnect</button>
+              <button *ngIf="gitHubLinked; else connectButton" class="pf-c-button pf-is-secondary pull-right" (click)="disconnectGitHub()">Disconnect</button>
               <ng-template #connectButton>
-                <button *ngIf="!gitHubLinked" class="btn btn-primary pull-right" (click)="connectGitHub()">Connect Account</button>
+                <button *ngIf="!gitHubLinked" class="pf-c-button pf-is-primary pull-right" (click)="connectGitHub()">Connect Account</button>
               </ng-template>
             </div>
           </div>
@@ -46,7 +46,7 @@
               </button>
             </div>
             <div class="col-xs-4">
-              <button *ngIf="!openShiftLinked" class="btn btn-primary pull-right" (click)="connectOpenShift()">Connect Account</button>
+              <button *ngIf="!openShiftLinked" class="pf-c-button pf-is-primary pull-right" (click)="connectOpenShift()">Connect Account</button>
             </div>
           </div>
         </div>

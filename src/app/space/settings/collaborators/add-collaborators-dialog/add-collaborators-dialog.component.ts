@@ -38,7 +38,7 @@ export class AddCollaboratorsDialogComponent implements OnInit {
       pullRight: false,
       enableSearch: true,
       checkedStyle: 'checkboxes',
-      buttonClasses: 'btn btn-default',
+      buttonClasses: 'pf-c-button pf-is-secondary',
       selectionLimit: 0,
       closeOnSelect: false,
       showCheckAll: false,

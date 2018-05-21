@@ -7,9 +7,9 @@
       <div class="col-sm-2">
         <f8-feature-toggle featureName="AppLauncher">
           <div *ngIf="userOwnsSpace()">
-            <button *ngIf="this.authentication.isLoggedIn()" id="default-level-analyze-overview-dashboard-create-space-button" class="btn btn-primary btn-lg f8-dashboard-masthead-create-application pull-right"
+            <button *ngIf="this.authentication.isLoggedIn()" id="default-level-analyze-overview-dashboard-create-space-button" class="pf-c-button pf-is-primary btn-lg f8-dashboard-masthead-create-application pull-right"
               (click)="openForgeWizard(addSpace)" default-level> Create an Application </button>
-            <button *ngIf="this.authentication.isLoggedIn()" id="user-level-analyze-overview-dashboard-create-space-button" class="btn btn-primary btn-lg f8-dashboard-masthead-create-application pull-right"
+            <button *ngIf="this.authentication.isLoggedIn()" id="user-level-analyze-overview-dashboard-create-space-button" class="pf-c-button pf-is-primary btn-lg f8-dashboard-masthead-create-application pull-right"
               (click)="showAddAppOverlay()" user-level> Create an Application </button>
           </div>
         </f8-feature-toggle>
@@ -50,9 +50,9 @@
       <div class="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-0">
         <f8-feature-toggle featureName="AppLauncher">
           <ng-container *ngIf="userOwnsSpace()">
-            <button *ngIf="this.authentication.isLoggedIn()" id="analyze-overview-add-to-space-button" class="btn btn-primary btn-lg pull-right"
+            <button *ngIf="this.authentication.isLoggedIn()" id="analyze-overview-add-to-space-button" class="pf-c-button pf-is-primary btn-lg pull-right"
               (click)="openForgeWizard(addSpace)" default-level> Add to space </button>
-            <button *ngIf="this.authentication.isLoggedIn()" class="btn btn-primary btn-lg pull-right" (click)="showAddAppOverlay()"
+            <button *ngIf="this.authentication.isLoggedIn()" class="pf-c-button pf-is-primary btn-lg pull-right" (click)="showAddAppOverlay()"
               user-level> Add to space </button>
           </ng-container>
         </f8-feature-toggle>

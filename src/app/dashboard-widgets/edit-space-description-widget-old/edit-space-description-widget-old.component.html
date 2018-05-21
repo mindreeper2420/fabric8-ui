@@ -7,11 +7,11 @@
     <textarea row="2" placeholder="Description goes here" class="space-description form-control" *ngIf="isEditing && (isEditable() | async)"
       (keyup.enter)="onUpdateDescription(description.value)" (keydown.enter)="preventDef($event)" #description>{{space?.attributes.description}}</textarea>
     <div *ngIf="isEditing">
-      <button id="_btn_cancel" class="pull-right btn btn-default edit-space-description-btn" (click)="stopEditingDescription()">
+      <button id="_btn_cancel" class="pull-right pf-c-button pf-is-secondary edit-space-description-btn" (click)="stopEditingDescription()">
         <span class="fa fa-close"></span>
       </button>
       <!--Save icon-->
-      <button id="workItemTitle_btn_save" class="pull-right btn btn-primary edit-space-description-btn " (click)="saveDescription()">
+      <button id="workItemTitle_btn_save" class="pull-right pf-c-button pf-is-primary edit-space-description-btn " (click)="saveDescription()">
         <span class="fa fa-check"></span>
       </button>
     </div>
