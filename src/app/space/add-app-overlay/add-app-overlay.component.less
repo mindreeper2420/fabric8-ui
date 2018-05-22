@@ -22,25 +22,25 @@ input,
   .form-control {
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid @color-pf-white;
+    border-bottom: 1px solid var(--pf-color-white);
     border-radius: 0;
     font-size: 1.2em;
-    color: @color-pf-white;
+    color: var(--pf-color-white);
     &:focus {
-      border-bottom-color: @color-pf-blue;
+      border-bottom-color: var(--pf-color-blue-500);
       box-shadow: none;
     }
   }
   input::placeholder {
     font-style: italic;
-    color: @color-pf-white;
+    color: var(--pf-color-white);
   }
   input:hover,
   input:focus {
-    border-bottom-color: @color-pf-blue;
+    border-bottom-color: var(--pf-color-blue-500);
   }
   .code-imports {
-    color: @color-pf-white;
+    color: var(--pf-color-white);
     overflow-y: auto;
     .alert-row {
       position: relative;
@@ -49,8 +49,8 @@ input,
         top: -50px;
         .pf-c-alert pf-is-danger {
           background-color: rgba(0, 0, 0, 1);
-          border: 1px solid @color-pf-red-100;
-          color: @color-pf-red-100;
+          border: 1px solid var(--pf-color-red-100);
+          color: var(--pf-color-red-100);
         }
       }
     }
@@ -71,7 +71,7 @@ input,
             position: absolute;
             top: 67px;
             right: 20px;
-            color: @color-pf-white;
+            color: var(--pf-color-white);
             font-size: 1.5em;
           }
         }
@@ -100,7 +100,7 @@ input,
       }
       &_content {
         background-color: transparent;
-        color: @color-pf-white;
+        color: var(--pf-color-white);
         border: 0;
         &:hover {
           box-shadow: 0 1px 6px rgba(255, 255, 255, .35);
@@ -135,7 +135,7 @@ input,
       &_toolbar {
         margin-top: 40px;
         text-align: center;
-        color: @color-pf-black-700;
+        color: var(--pf-color-black-700);
         button:last-of-type {
           margin-left: 15px;
         }
@@ -148,15 +148,15 @@ input,
       }
     }
     .sticky.close {
-      color: @color-pf-white;
+      color: var(--pf-color-white);
       position: fixed;
       right: 130px;
       top: 121px;
       z-index: 1030;
       font-size: 25px;
       .pficon {
-        background: @color-pf-black-900;
-        border: 3px solid @color-pf-black-900;
+        background: var(--pf-color-black-900);
+        border: 3px solid var(--pf-color-black-900);
         border-radius: 50%;
         padding: 2px 4px;
       }

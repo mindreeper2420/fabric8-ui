@@ -10,11 +10,11 @@
   background-color: rgba(0, 0, 0, .8);
   overflow-y: auto;
   .create-launcher {
-    color: @color-pf-white;
+    color: var(--pf-color-white);
     .pf-c-alert pf-is-danger {
       background-color: transparent;
       border: none;
-      color: @color-pf-red-100;
+      color: var(--pf-color-red-100);
     }
     &-step {
       margin-top: 5%;
@@ -31,7 +31,7 @@
       &-lg { width: 75%; }
       &-content {
         background-color: transparent;
-        color: @color-pf-white;
+        color: var(--pf-color-white);
         box-shadow: none;
         border: 0;
       }
@@ -41,22 +41,22 @@
       .form-control {
         background-color: transparent;
         border: 0;
-        border-bottom: 1px solid @color-pf-white;
+        border-bottom: 1px solid var(--pf-color-white);
         border-radius: 0;
         font-size: 1.2em;
-        color: @color-pf-white;
+        color: var(--pf-color-white);
         option {
-          color: @color-pf-black;
+          color: var(--pf-color-black-1000);
         }
         &:focus {
-          border-bottom-color: @color-pf-blue;
+          border-bottom-color: var(--pf-color-blue-500);
           box-shadow: none;
         }
       }
       &-tool-bar {
         margin-top: 15px;
         text-align: center;
-        color: @color-pf-black-700;
+        color: var(--pf-color-black-700);
         .btn.disabled,.btn[disabled] {
           /* stylelint-disable */
           background-color: transparent !important;
@@ -69,24 +69,24 @@
       }
       .create-launcher-description {
         border: 0;
-        border-bottom: 1px solid @color-pf-white;
+        border-bottom: 1px solid var(--pf-color-white);
         min-height: 25px;
         &:hover,
         &:active,
         &:focus {
-          border-bottom-color: @color-pf-blue;
+          border-bottom-color: var(--pf-color-blue-500);
         }
       }
     }
     .development-process-selector {
       top: 70px;
       right: 25px;
-      color: @color-pf-white;
+      color: var(--pf-color-white);
     }
     input::placeholder,
     select {
       font-style: italic;
-      color: @color-pf-white;
+      color: var(--pf-color-white);
     }
     input:hover,
     input:focus,
@@ -94,7 +94,7 @@
     textarea:active,
     select:hover,
     select:active {
-      border-bottom-color: @color-pf-blue;
+      border-bottom-color: var(--pf-color-blue-500);
     }
     select:hover {
       cursor: pointer;
@@ -114,13 +114,13 @@
       margin-top: 35px;
     }
     .form-control {
-      color: @color-pf-white;
+      color: var(--pf-color-white);
     }
     .spaces-information-block {
       margin-top: 35px;
       &_notice {
         border: 1px solid;
-        border-color: @color-pf-orange-400;
+        border-color: var(--pf-color-orange-400);
         padding: 15px;
       }
       i {
@@ -138,7 +138,7 @@
       }
       &_radio {
         border-left: 1px solid;
-        border-left-color: @color-pf-black-150;
+        border-left-color: var(--pf-color-black-150);
         text-align: center;
       }
       &_icon {

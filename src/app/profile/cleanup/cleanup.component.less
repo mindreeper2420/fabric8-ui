@@ -2,7 +2,7 @@
 
 .cleanup {
   &-list-results {
-    background-color: @color-pf-black-200;
+    background-color: var(--pf-color-black-200);
     padding: 30px;
     .list-group-item-header {
       &:hover {
@@ -10,7 +10,7 @@
       }
     }
     .list-group-item:hover {
-      background-color: @color-pf-black-100;
+      background-color: var(--pf-color-black-100);
     }
     .list-view-pf-body {
       padding-left: 15px;
@@ -26,15 +26,15 @@
     padding-top: 30px;
   }
   &-row {
-    background-color: @color-pf-white;
+    background-color: var(--pf-color-white);
     margin-bottom: 30px;
     &-header {
       padding-top: 5px;
       padding-left: 10px;
     }
     &-account-icon {
-      border-color: @color-pf-black-200 !important; /* stylelint-disable-line declaration-no-important */
-      background-color: @color-pf-black-200;
+      border-color: var(--pf-color-black-200) !important; /* stylelint-disable-line declaration-no-important */
+      background-color: var(--pf-color-black-200);
     }
     .list-view-pf-view {
       margin-top: 5px;
@@ -54,7 +54,7 @@
   }
   &-status-icon {
     font-size: 1.5em;
-    color: @color-pf-black-400;
+    color: var(--pf-color-black-400);
   }
 }
 

@@ -6,8 +6,8 @@
 }
 
 #settings-title-nav {
-  background-color: @color-pf-black-800;
-  color: @color-pf-black-100;
+  background-color: var(--pf-color-black-800);
+  color: var(--pf-color-black-100);
   padding: 20px 15px 15px 25px;
 }
 
@@ -18,15 +18,16 @@
 
 #settings-options-nav {
   padding: 10px 0 0;
-  background-color: @color-pf-black-150;
-  border-bottom: 1px solid @color-pf-black-300;
+  background-color: var(--pf-color-black-150);
+  border-bottom: 1px solid var(--pf-color-black-300);
   ul {
     list-style-type: none;
     padding-left: 25px;
+    margin-bottom: 12px;
     li {
       a.active-link {
-        color: @color-pf-blue;
-        border-bottom: 3px solid @color-pf-blue;
+        color: var(--pf-color-blue-500);
+        border-bottom: 3px solid var(--pf-color-blue-500);
         padding-bottom: 9px;
         text-decoration: none;
       }
@@ -37,10 +38,10 @@
     display: inline-block;
   }
   a {
-    color: @color-pf-black;
+    color: var(--pf-color-black-1000);
     text-decoration: none;
   }
   a:hover {
-    color: @color-pf-blue;
+    color: var(--pf-color-blue-500);
   }
 }

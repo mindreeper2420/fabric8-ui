@@ -93,10 +93,10 @@
               </div>
             </div>
             <div class="padding-top-20">
-              <button class="btn btn-primary btn-default col-md-3"
+              <button class="pf-c-button pf-is-primary col-md-3"
                 [disabled]="isUpdateProfileDisabled"
                 (click)="updateProfile()">Update</button>
-              <button class="btn btn-cancel btn-default col-md-3"
+              <button class="pf-c-button pf-is-secondary col-md-3"
                 (click)="routeToProfile()">Cancel</button>
             </div>
           </div>
@@ -119,7 +119,7 @@
             </div>
             <div class="form-group">
               <label for="forPassword">Password</label>
-              <button class="db btn btn-default" id="passwordReset" (click)="resetPasswordUrl()">
+              <button class="db pf-c-button pf-is-secondary" id="passwordReset" (click)="resetPasswordUrl()">
                 Change password
               </button>
             </div>
@@ -137,7 +137,7 @@
                     (click)="toggleTokenPanel()"></i>
                   <p class="token-heading padding-top-10 padding-right-15 margin-right-5"
                     [ngClass]="{'padding-left-11': tokenPanelOpen, 'padding-left-15': !tokenPanelOpen}">{{token}}</p>
-                  <button class="btn btn-lg btn-default"
+                  <button class=" pf-c-button pf-is-secondary"
                           (click)="copyTokenToClipboard()">Copy</button>
                 </div>
                 <div class="panel-body margin-left-15 margin-right-15" *ngIf="tokenPanelOpen">
@@ -147,8 +147,8 @@
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <button class="btn btn-default" (click)="updateTenant()" [disabled]="updateTenantStatus === TenantUpdateStatus.Updating">Update Tenant</button>
-                <button class="btn btn-default" (click)="cleanupTenant()">Reset Environment</button>
+                <button class="pf-c-button pf-is-secondary" (click)="updateTenant()" [disabled]="updateTenantStatus === TenantUpdateStatus.Updating">Update Tenant</button>
+                <button class="pf-c-button pf-is-secondary" (click)="cleanupTenant()">Reset Environment</button>
               </div>
               <div class="col-xs-12 update-tenant-status padding-top-20" *ngIf="updateTenantStatus !== TenantUpdateStatus.NoAction">
                 <div *ngIf="updateTenantStatus === TenantUpdateStatus.Updating">

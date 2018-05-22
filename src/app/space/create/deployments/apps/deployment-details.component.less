@@ -25,7 +25,7 @@
 
 .resource-badge {
   background: #fef5eb;
-  color: @color-pf-black;
+  color: var(--pf-color-black-1000);
   font-weight: 200;
   font-size: 1em !important; /* stylelint-disable declaration-no-important */
   border-style: solid;
@@ -37,22 +37,22 @@
   &-warn {
     border-left-style: solid;
     border-left-width: 4px;
-    border-left-color: @color-pf-orange-300;
+    border-left-color: var(-pf-color-orange-300);
     padding-left: 12px;
   }
   &-err {
     border-left-style: solid;
     border-left-width: 4px;
-    border-left-color: @color-pf-red-100;
+    border-left-color: var(--pf-color-red-100);
     padding-left: 12px;
   }
 }
 
 .label {
   &-warn {
-    color: @color-pf-orange;
+    color: var(--pf-color-orange-400);
   }
   &-err {
-    color: @color-pf-red-100;
+    color: var(--pf-color-red-100);
   }
 }

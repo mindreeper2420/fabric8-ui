@@ -35,7 +35,7 @@
 }
 @keyframes fadeOut {
   from {
-    background-color: #d1d1d1;
+    background-color: var(--pf-color-black-300);
   }
   to {
     background-color: transparent;
@@ -43,27 +43,27 @@
 }
 @keyframes fadeInSuccess {
   to {
-    background-color: #3f9c35;
+    background-color: var(--pf-color-green-400);
   }
 }
 @keyframes fadeInFailed {
   to {
-    background-color: #c00;
+    background-color: var(--pf-color-red-100);
   }
 }
 @keyframes fadeInProgress {
   to {
-    background-color: #0088ce;
+    background-color: var(--pf-color-blue-400);
   }
 }
 @keyframes fadeInAborted {
   to {
-    background-color: #d1d1d1;
+    background-color: var(--pf-color-black-300);
   }
 }
 @keyframes fadeInNotExecuted {
   to {
-    background-color: #d1d1d1;
+    background-color: var(--pf-color-black-300);
   }
 }
 
@@ -75,11 +75,11 @@
 .pipeline-status-bar .clip1:before,
 .pipeline-status-bar .clip2:before,
 .pipeline-status-bar .pipeline-line:before {
-  background-color: #d1d1d1;
+  background-color: var(--pf-color-black-300);
 }
 
 .pipeline-status-bar .inner-circle-fill {
-  background-color: #fff;
+  background-color: var(--pf-color-white);
   opacity: 0;
 }
 
@@ -90,7 +90,7 @@
 .pipeline-status-bar.SUCCESS .pipeline-line:before,
 .pipeline-status-bar.SUCCESS .pipeline-circle,
 .pipeline-status-bar.SUCCESS .pipeline-circle .inner-circle {
-  background-color: #3f9c35;
+  background-color: var(--pf-color-green-400);
 }
 
 .pipeline-status-bar.SUCCESS .pipeline-circle:after {
@@ -105,7 +105,7 @@
 .pipeline-status-bar.FAILED .pipeline-line:before,
 .pipeline-status-bar.FAILED .pipeline-circle,
 .pipeline-status-bar.FAILED .pipeline-circle .inner-circle {
-  background-color: #c00;
+  background-color: var(--pf-color-red-100);
 }
 
 .pipeline-status-bar.FAILED .pipeline-circle:after {
@@ -120,7 +120,7 @@
 .pipeline-status-bar.NOT_EXECUTED .pipeline-line:before,
 .pipeline-status-bar.NOT_EXECUTED .pipeline-circle,
 .pipeline-status-bar.NOT_EXECUTED .pipeline-circle .inner-circle {
-  background-color: #d1d1d1;
+  background-color: var(--pf-color-black-300);
 }
 
 .pipeline-status-bar.NOT_EXECUTED .pipeline-circle:after {
@@ -135,7 +135,7 @@
 .pipeline-status-bar.PAUSED_PENDING_INPUT .pipeline-line:before,
 .pipeline-status-bar.PAUSED_PENDING_INPUT .pipeline-circle,
 .pipeline-status-bar.PAUSED_PENDING_INPUT .pipeline-circle .inner-circle {
-  background-color: #f0ab00;
+  background-color: var(--pf-color-gold-400);
 }
 
 .pipeline-status-bar.PAUSED_PENDING_INPUT .pipeline-circle:after {
@@ -152,7 +152,7 @@
 .pipeline-status-bar.ABORTED .pipeline-line:before,
 .pipeline-status-bar.ABORTED .pipeline-circle,
 .pipeline-status-bar.ABORTED .pipeline-circle .inner-circle {
-  background-color: #d1d1d1;
+  background-color: var(--pf-color-black-300);
 }
 
 .pipeline-status-bar.ABORTED .pipeline-circle:after {
@@ -175,7 +175,7 @@
     position: relative;
     width: 100%;
     height: 4px;
-    background: #d1d1d1;
+    background: var(--pf-color-black-300);
   }
   .pipeline-line:before {
     content: '';
@@ -187,7 +187,7 @@
     overflow: hidden;
     &:before {
       animation: progress-rail 5s .5s linear infinite;
-      background-color: #0088ce;
+      background-color: var(--pf-color-blue-400);
       transform: translateX(-100%);
       width: 25%;
     }
@@ -209,7 +209,7 @@
   height: 18px;
   border-radius: 9px;
   margin-top: -11px;
-  background: #d1d1d1;
+  background: var(--pf-color-black-300);
   transform: rotate(-90deg);
   .clip1 {
     position: absolute;
@@ -231,7 +231,7 @@
   }
   &:after {
     position: absolute;
-    color: #fff;
+    color: var(--pf-color-white);
     font-family: FontAwesome;
     font-size: 12px;
     transform: translate(-50%, -50%) rotate(90deg);

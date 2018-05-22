@@ -20,6 +20,13 @@
 // PatternFly References
 @import (reference) '../../../../node_modules/patternfly/dist/less/patternfly.less';
 
+// New typography settings
+@import '_typography.less';
+
+// overwrite PatternFly 3 colors with PF-Next colors
+// uses CSS variables instead of Less variables
+@import '_colors.less';
+
 // margin and padding formulas
 @import '_formulas.less';
 
@@ -32,9 +39,6 @@
 
 // General layout information
 @import '_layout.less';
-
-// New typography settings
-@import '_typography.less';
 
 // Overrides of PatternFly
 @import '_overrides.less';

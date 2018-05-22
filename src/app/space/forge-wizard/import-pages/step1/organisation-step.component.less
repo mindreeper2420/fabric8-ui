@@ -10,7 +10,7 @@
       &.combobox {
         top: 0;
         left: 0;
-        background-color: @color-pf-white;
+        background-color: var(--pf-color-white);
         color: inherit;
       }
     }
@@ -36,18 +36,18 @@
       border-bottom-color: transparent;
       .item-name { font-weight: 600; }
       &:hover {
-        background-color: @color-pf-blue-100;
+        background-color: var(--pf-color-blue-100);
         border-top: 1px solid;
-        border-top-color: @color-pf-blue-200;
+        border-top-color: var(--pf-color-blue-200);
         border-bottom: 1px solid;
-        border-bottom-color: @color-pf-blue-200;
-        .item-name { color: @color-pf-black; }
-        .item-description { color: @color-pf-black; }
+        border-bottom-color: var(--pf-color-blue-200);
+        .item-name { color: var(--pf-color-black-1000); }
+        .item-description { color: var(--pf-color-black-1000); }
       }
       &.selected {
-        background-color: @color-pf-blue-300;
-        .item-name { color: @color-pf-white; }
-        .item-description { color: @color-pf-white; }
+        background-color: var(--pf-color-blue-300);
+        .item-name { color: var(--pf-color-white); }
+        .item-description { color: var(--pf-color-white); }
       }
     }
   }

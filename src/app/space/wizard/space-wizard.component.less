@@ -9,7 +9,7 @@
 // make styles apply to host element and all child elements , including child components
 :host /deep/ {
   min-height: 450px;
-  background-color: @color-pf-white;
+  background-color: var(--pf-color-white);
   // ensure consistent padding on bootstrap rows
   // startswith col-
   [class^='col-'] {
@@ -27,7 +27,7 @@
   .wizard-step-child-elements {
     >header {
       position: relative;
-      background-color: @color-pf-black-100;
+      background-color: var(--pf-color-black-100);
       &.container-fluid {
         padding-left: @wizard-spacing+0;
         padding-right: @wizard-spacing+0;
@@ -73,14 +73,14 @@
         width: 100%;
       }
       &.forge-section {
-        background-color: @color-pf-black-200;
+        background-color: var(--pf-color-black-200);
       }
     }
     >footer {
       position: relative;
       border-top: 1px solid;
-      border-top-color: @color-pf-black-300;
-      background-color: @color-pf-white;
+      border-top-color: var(--pf-color-black-300);
+      background-color: var(--pf-color-white);
       &.container-fluid {
         padding-left: @wizard-spacing+0;
         padding-right: @wizard-spacing+0;

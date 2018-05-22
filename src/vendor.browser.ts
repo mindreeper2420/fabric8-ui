@@ -27,9 +27,9 @@ import 'ngx-bootstrap';
 // import PatternFly CSS
 /* tslint:disable:ordered-imports */
 import '../node_modules/patternfly/dist/css/patternfly.min.css';
-import '../node_modules/@patternfly/patternfly-next/dist/patternfly.css';
 import '../node_modules/patternfly/dist/css/patternfly-additions.min.css';
 import '../node_modules/patternfly-ng/dist/css/patternfly-ng.min.css';
+import '../node_modules/@patternfly/patternfly-next/patternfly.css';
 import '../node_modules/@fortawesome/fontawesome/styles.css';
 
 if ('production' === ENV) {

@@ -19,6 +19,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
@@ -79,9 +80,9 @@ module.exports = function (options) {
      */
     entry: {
       'polyfills': './src/polyfills.browser.ts',
-      'vendor': './src/vendor.browser.ts',
+      'main': './src/main.browser.ts',
+      'vendor': './src/vendor.browser.ts'
       // 'main': aotMode ? './src/main.browser.aot.ts' : './src/main.browser.ts'
-      'main': './src/main.browser.ts'
     },
 
     /*
@@ -312,10 +313,7 @@ module.exports = function (options) {
                 loader: 'less-loader',
                 options: {
                   paths: [
-                    path.resolve(__dirname, "../node_modules/patternfly/dist/less"),
-                    path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies"),
-                    path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies/bootstrap"),
-                    path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies/font-awesome"),
+                    path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/"),
                   ],
                   sourceMap: true
                 }
@@ -338,10 +336,7 @@ module.exports = function (options) {
               loader: 'less-loader',
               options: {
                 paths: [
-                  path.resolve(__dirname, "../node_modules/patternfly/dist/less"),
-                  path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies"),
-                  path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies/bootstrap"),
-                  path.resolve(__dirname, "../node_modules/patternfly/dist/less/dependencies/font-awesome"),
+                  path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/"),
                 ],
                 sourceMap: true
               }
@@ -359,7 +354,9 @@ module.exports = function (options) {
             query: {
               limit: 3000,
               includePaths: [
-                path.resolve(__dirname, "../node_modules/patternfly/dist/fonts/")
+                path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/assets/fonts/overpass-mono-webfront"),
+                path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/assets/fonts/overpass-webfront"),
+                path.resolve(__dirname, "../src/assets/fonts/")
               ],
               name: '_assets/fonts/[name]' + (isProd ? '.[hash]' : '') + '.[ext]'
             }
@@ -378,7 +375,11 @@ module.exports = function (options) {
               name: '_assets/images/[name]' + (isProd ? '.[hash]' : '') + '.[ext]'
             }
           },
-          exclude: path.resolve(__dirname, "../node_modules/patternfly/dist/fonts/")
+          exclude: [
+            path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/assets/fonts/overpass-mono-webfront"),
+            path.resolve(__dirname, "../node_modules/@patternfly/patternfly-next/assets/fonts/overpass-webfront"),
+            path.resolve(__dirname, "../src/assets/fonts/")
+          ]
         }
       ]
     },
@@ -438,6 +439,19 @@ module.exports = function (options) {
           from: 'src/meta'
         }
       ]),
+
+      new HtmlWebpackExternalsPlugin({
+        externals: [
+          {
+            module: 'fontawesome',
+            entry: [
+              'https://use.fontawesome.com/releases/v5.0.10/js/all.js',
+              'https://use.fontawesome.com/releases/v5.0.10/js/v4-shims.js'
+            ],
+            global: 'FontAwesome',
+          },
+        ],
+      }),
 
       /*
        * Plugin: HtmlWebpackPlugin

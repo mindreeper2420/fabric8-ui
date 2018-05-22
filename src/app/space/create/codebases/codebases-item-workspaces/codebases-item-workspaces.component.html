@@ -9,7 +9,7 @@
       {{workspace.attributes.name.length > 0 ? workspace.attributes.name : "None"}}
     </option>
   </select>
-  <button class="pf-c-button pf-is-secondary btn-lg"
+  <button class="pf-c-button pf-is-secondary"
           [disabled]="!workspaceSelected || workspaceBusy"
           (click)="openWorkspace()">Open</button>
 </ng-template>

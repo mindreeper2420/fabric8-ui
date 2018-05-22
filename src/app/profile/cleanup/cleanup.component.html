@@ -76,9 +76,9 @@
         <p class="cleanup-action-confirm" *ngIf="cleanupStatus === 'completed'">
           You have successfully erased your OpenShift.io environment.  You can now return to your user dashboard.
         </p>
-        <button class="pf-c-button pf-is-danger btn-lg" (click)="confirmErase()" *ngIf="cleanupStatus !== 'completed'">Erase My OpenShift.io Environment</button>
+        <button class="pf-c-button pf-is-danger" (click)="confirmErase()" *ngIf="cleanupStatus !== 'completed'">Erase My OpenShift.io Environment</button>
         <div *ngIf="cleanupStatus === 'completedwitherrors' || cleanupStatus === 'completed'" class="cleanup-home-action">
-          <button class="pf-c-button pf-is-primary btn-lg" (click)="goHome()">Take me to my Dashboard</button>
+          <button class="pf-c-button pf-is-primary" (click)="goHome()">Take me to my Dashboard</button>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-8 col-sm-offset-4">
-            <button class="col-sm-12 btn" [ngClass]="{ 'btn-danger': userNameMatches() }" (click)="confirm()" [disabled]="!userNameMatches()" type="submit">I understand my actions - erase my environment</button>
+            <button class="col-sm-12 pf-c-button" [ngClass]="{ 'pf-is-danger': userNameMatches() }" (click)="confirm()" [disabled]="!userNameMatches()" type="submit">I understand my actions - erase my environment</button>
           </div>
         </div>
       </form>

@@ -23,6 +23,12 @@
     }
     &-heading {
       margin-bottom: 0;
+      .card-pf-title {
+        margin-top: 1rem;
+        // &:not(:first-child) {
+        //   margin-top: 0;
+        // }
+      }
       &-btn {
         &-link {
           display: inline-flex;
@@ -34,12 +40,17 @@
           display: inline-flex;
           /* stylelint-disable */
           /* overwrite default button link style for kebab items */
-          color: @color-pf-black !important;
+          color: var(--pf-color-black-1000) !important;
           /* stylelint-enable */
           &:hover {
             text-decoration: none;
           }
         }
+      }
+      &-details {
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
     }
     &-list {

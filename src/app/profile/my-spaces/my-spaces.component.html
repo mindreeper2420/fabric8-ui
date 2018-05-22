@@ -5,7 +5,7 @@
     (onSortChange)="sortChange($event)"
     [resultsCount]="resultsCount">
   </my-spaces-toolbar>
-  <div class="container-fluid margin-bottom-20">
+  <div class="container-fluid pf-c-content">
     <div class="row">
       <div class="col-sm-12">
         <pfng-list
@@ -49,7 +49,7 @@
   </div>
   <div class="modal-body">
     <h2>Are you sure you want to remove the space?</h2>
-    <button class="btn btn-cancel" (click)="closeModal()">Cancel</button>
+    <button class="pf-c-button pf-is-secondary" (click)="closeModal()">Cancel</button>
     <button class="pf-c-button pf-is-danger" (click)="removeSpace()">Remove</button>
   </div>
 </ng-template>

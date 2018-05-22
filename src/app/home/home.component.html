@@ -26,7 +26,7 @@
                   Breathe life into your user profile with custom avatars. A favorite picture? A whimsical image? It's up to you!
                 </p>
                 <p>
-                  <a href="https://docs.openshift.io" target="_blank" class="btn btn-primary">Learn more</a>
+                  <a href="https://docs.openshift.io" target="_blank" class="pf-c-button pf-is-primary">Learn more</a>
                 </p>
               </div>
             </slide>
@@ -39,7 +39,7 @@
                   Decide which level of features you’d like to use.  You can stay safe with production, be on the edge with beta, or venture on the wild side with our experimental features!
                 </p>
                 <p>
-                  <a href="https://docs.openshift.io" target="_blank" class="btn btn-primary">Learn more</a> <!-- where does this link to? -->
+                  <a href="https://docs.openshift.io" target="_blank" class="pf-c-button pf-is-primary">Learn more</a> <!-- where does this link to? -->
                 </p>
               </div>
             </slide>
@@ -52,6 +52,9 @@
         <div class="col-xs-12 col-md-4">
           <div class="card-pf f8-card-lg">
             <div class="card-pf-heading f8-card-heading">
+              <h2 class="card-pf-title">
+                Recent Spaces
+              </h2>
               <div class="card-pf-heading-details f8-card-heading-details">
                 <f8-feature-toggle featureName="AppLauncher">
                   <a class="btn btn-link f8-card-heading-btn-link" (click)="openForgeWizard(createSpace)" default-level>
@@ -62,9 +65,6 @@
                   </a>
                 </f8-feature-toggle>
               </div>
-              <h2 class="card-pf-title">
-                Recent Spaces
-              </h2>
             </div>
             <div class="card-pf-body f8-card-body">
               <fabric8-loading-widget message="Please wait while we load your recent spaces"
@@ -78,8 +78,8 @@
                 </p>
                 <div class="blank-slate-pf-main-action">
                   <f8-feature-toggle featureName="AppLauncher">
-                    <button class="pf-c-button pf-is-primary btn-lg" (click)="openForgeWizard(createSpace)" default-level> Create a Space </button>
-                    <button class="pf-c-button pf-is-primary btn-lg" (click)="showAddSpaceOverlay()" user-level> Create a Space </button>
+                    <button class="pf-c-button pf-is-primary" (click)="openForgeWizard(createSpace)" default-level> Create a Space </button>
+                    <button class="pf-c-button pf-is-primary" (click)="showAddSpaceOverlay()" user-level> Create a Space </button>
                   </f8-feature-toggle>
                 </div>
               </div>
@@ -204,8 +204,8 @@
                 </p>
                 <div class="blank-slate-pf-main-action">
                   <f8-feature-toggle featureName="AppLauncher">
-                    <button class="pf-c-button pf-is-primary btn-lg" (click)="openForgeWizard(createSpace)" default-level> Create a Space </button>
-                    <button class="pf-c-button pf-is-primary btn-lg" (click)="showAddSpaceOverlay()" user-level> Create a Space </button>
+                    <button class="pf-c-button pf-is-primary" (click)="openForgeWizard(createSpace)" default-level> Create a Space </button>
+                    <button class="pf-c-button pf-is-primary" (click)="showAddSpaceOverlay()" user-level> Create a Space </button>
                   </f8-feature-toggle>
                 </div>
               </div>
