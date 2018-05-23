@@ -48,7 +48,7 @@ export const routes: Routes = [
     },
     loadChildren: './home/home.module#HomeModule',
     data: {
-      title: 'Analyze',
+      title: 'Home',
       featureName: 'Analyze'
     }
   },

@@ -1,15 +1,76 @@
-@import (reference) '../../../assets/stylesheets/shared/osio.less';
+@import (reference) "../../../assets/stylesheets/shared/osio.less";
 
-.navbar-pf-vertical .navbar-brand .navbar-brand-name {
-  margin: 5px 15px 0 0;
-  width: 50%;
+.navbar-pf-vertical {
+  height: 66px;
+  border-top-color: @color-pf-red;
+  .navbar-brand .navbar-brand-name {
+    margin: 5px 15px 0 0;
+    width: 50%;
+  }
+  &.collapsed {
+    border-right: 1px solid;
+    border-right-color: @color-pf-black-900;
+  }
 }
 
 .nav-pf-vertical {
+  top: 0;
+  border-top: 2px solid;
+  border-top-color: @color-pf-red;
+  .icon-user {
+    width: 50%;
+    margin: 13px auto;
+  }
+  .icon-user-private {
+    margin: 17px 23px;
+    color: @color-pf-white;
+  }
   &.collapsed,
   &.collapse {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+.navbar-header {
+  position: absolute;
+  left: 75px;
+  .recent-items-dropdown {
+    width: 250px;
+    padding: 3px 0;
+    background-color: #292e34;
+    .nav-item-iconic {
+      &.dropdown-toggle {
+        text-align: left;
+        .fa-angle-down {
+          position: absolute;
+          right: 15px;
+        }
+      }
+    }
+    .recent-items {
+      &-toggle {
+        width: 248px;
+        &-text {
+          height: 20px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          &-dropdown {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 2px;
+          }
+        }
+        // .caret {
+        //   position: absolute;
+        //   right: 0;
+        //   margin-right: 5px;
+        //   margin-top: 3px;
+        // }
+      }
+    }
   }
 }
 
@@ -216,23 +277,31 @@
       padding: 2px;
       display: inline-block;
       vertical-align: text-bottom;
-      i { color: @color-pf-black-500; }
+      i {
+        color: @color-pf-black-500;
+      }
     }
-    &:hover { .pointer; }
+    &:hover {
+      .pointer;
+    }
   }
 }
 
 .user-dropdown {
   padding: 10px 14px;
   width: 200px;
-  &:hover { .pointer; }
+  &:hover {
+    .pointer;
+  }
   &-items {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     margin-right: 5px;
   }
-  &__username { vertical-align: sub; }
+  &__username {
+    vertical-align: sub;
+  }
   &__user-icon {
     display: inline-block;
     vertical-align: middle;
